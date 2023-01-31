@@ -1,0 +1,28 @@
+---
+layout: libdoc/page-codemirror
+permalink: index.html
+unlisted: true
+---
+<button c-toggle="bar">bar (trigger)</button>
+<div class=" " c-toggle-name="bar">bar content (target)</div>
+<button c-toggle="foo"
+    data-opened-state-class="c-skin m-bc-0">foo (trigger)</button>
+<div c-toggle-name="foo"
+    class=" "
+    data-opened-state-class="c-skin m-bc-primary-200">foo content (target)</div>
+<!-- DEMO UNIQUEMENT -->
+<style>
+    body {
+        padding: var(--ita-spacing-4);
+        color: var(--ita-color-primary-800);
+        font-family: var(--ita-font-family-mono);
+        font-size: 1rem;
+        line-height: 1.5rem;
+        padding-bottom: 50vh;
+    }
+    [c-toggle-name] {
+        padding: var(--ita-spacing-4);
+        margin-top: var(--ita-spacing-4);
+        background-color: var(--ita-color-primary-100);
+    }
+</style>

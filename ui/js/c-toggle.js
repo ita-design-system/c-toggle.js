@@ -1,0 +1,176 @@
+/**
+* C-TOGGLE
+* v0.1.0
+* Toggle management
+* https://github.com/ita-design-system/c-toggle.js
+*/
+const cToggle = {
+    // Toggle ids that need to be closed when user clicks on document excepting on triggers nor targets
+    // Array is populated on update method invoke
+    dismissableIds: [],
+    /**
+     * DOCUMENT CLICK
+     * @param {event} event handler method on document click
+     */
+    documentClick: function(event) {
+        // Potential toggle target or trigger as ancestor
+        const el_closest_toggle = event.target.closest('[c-toggle], [c-toggle-name]');
+        // Click is anywhere but in a toggle trigger nor a target
+        if (el_closest_toggle === null) {
+            cToggle.dismissableIds.forEach(function(toggle_id) {
+                cToggle.close(toggle_id);
+            });
+        }
+    },
+    /**
+     * SUBJOB
+     * Apply routine of toggle job
+     * @param {Object} el DOM element
+     * @param {String} method must be 'add', 'remove' or 'toggle'
+     */
+    subjob: function(el, method) {
+        // Element must have its own opened state classes defined
+        if (el.getAttribute('c-toggle') !== undefined && el.dataset.openedStateClass !== undefined) {
+            // Split multiple class names
+            const current_el_opened_state_class_array = el.dataset.openedStateClass.split(' ');
+            if (method == 'toggle') {
+                // If origin classes are different from current class list
+                if (el.dataset.classOrigin != el.classList.toString()) {
+                    // Retrieve and apply saved class origin
+                    el.setAttribute('class', el.dataset.classOrigin);
+                } else {
+                    // Apply replacement classes
+                    el.setAttribute('class', el.dataset.openedStateClass);
+                }
+            } else if (method == 'add') {
+                // Apply replacement classes
+                el.setAttribute('class', el.dataset.openedStateClass);
+            } else if (method == 'remove') {
+                // Retrieve and apply saved class origin
+                el.setAttribute('class', el.dataset.classOrigin);
+            }
+        }
+    },
+    /**
+     * JOB
+     * Routine applied on each toggle invoke
+     * @param {String} id id of the toggle 
+     * @param {String} method method to apply
+     */
+    job: function(id, method) {
+        if (typeof id == 'string' && (method == 'add' || method == 'remove' || method == 'toggle')) {
+            if (typeof cToggle.instances[id] == 'object') {
+                // JOB FOR TRIGGERS
+                cToggle.instances[id].triggers.forEach(function(el) {
+                    cToggle.subjob(el, method);
+                });
+                // JOB FOR TARGETS
+                cToggle.instances[id].targets.forEach(function(el) {
+                    cToggle.subjob(el, method);
+                });
+            }
+        }
+    },
+    /**
+     * OPEN
+     * Method to invoke to open a toggle
+     * @param {String} id id of the toggle to open
+     */
+    open: function(id) {
+        cToggle.job(id, 'add');
+    },
+    /**
+     * CLOSE
+     * Method to invoke to close a toggle
+     * @param {String} id id of the toggle to close
+     */
+    close: function(id) {
+        cToggle.job(id, 'remove');
+    },
+    /**
+     * TOGGLE
+     * Method closes the specified toggle if opened and closes it if opened
+     * @param {String} id id of the toggle
+     */
+    toggle: function(id) {
+        cToggle.job(id, 'toggle');
+    },
+    // Object populated by update() method
+    instances: {
+        // TOGGLE_ID: {
+        //     targets: [el, el, ...],
+        //     triggers: [el, el, ...]
+        // }
+    },
+    /**
+     * UPDATE
+     * Method to invoke on each page load or DOM change
+     */
+    update: function() {
+        // Iterate each trigger
+        document.querySelectorAll('[c-toggle]').forEach(function(el_trigger) {
+            // Get the toggle id
+            const toggle_id = el_trigger.getAttribute('c-toggle');
+            // Array of all targets elements with this toggle_id
+            const els_targets = document.querySelectorAll('[c-toggle-name="'+toggle_id+'"]');
+            // On targets, save the original class attribute before any change
+            els_targets.forEach(function(el_target) {
+                const current_class_attribute = el_target.getAttribute('class') || '';
+                // Save current class state
+                el_target.dataset.classOrigin = current_class_attribute;
+            });
+            // Get user settings
+            const event_name = el_trigger.dataset.event;
+            const dismiss = el_trigger.dataset.dismiss;
+            const current_class_attribute = el_trigger.getAttribute('class') || '';
+            // Save current class state
+            el_trigger.dataset.classOrigin = current_class_attribute;
+            // Work only if at least one target exists
+            if (els_targets.length > 0) {
+                // Add listeners based on data-method
+                if (event_name !== undefined) {
+                    // Type of listener
+                    if (event_name == 'mousehover' || event_name == 'mouseover') {
+                        el_trigger.addEventListener('mouseenter', function() {
+                            cToggle.open(toggle_id);
+                        });
+                        el_trigger.addEventListener('mouseleave', function() {
+                            cToggle.close(toggle_id);
+                        });
+                    }
+                    else if (event_name == 'mouseenter') {
+                        el_trigger.addEventListener('mouseenter', function() {
+                            cToggle.open(toggle_id);
+                        });
+                    }
+                }
+                // Default method applied
+                else  {
+                    el_trigger.addEventListener('click', function() {
+                        cToggle.toggle(toggle_id);
+                    });
+                }
+                // Write instance
+                // If first pass
+                if (cToggle.instances[toggle_id] === undefined) {
+                    cToggle.instances[toggle_id] = {
+                        triggers: [el_trigger],
+                        targets: els_targets
+                    }
+                }
+                // Otherwise
+                else {
+                    cToggle.instances[toggle_id].triggers.push(el_trigger);
+                }
+                // Dismissable triggers and targets
+                // Toggles that need to be closed when user clicks outside toggles triggers and targets
+                if (dismiss == 'true') {
+                    cToggle.dismissableIds.push(toggle_id);
+                }
+            }
+        });
+        // Bind document click to enable dismiss feature
+        document.addEventListener('click', cToggle.documentClick);
+    }
+}
+cToggle.update();
