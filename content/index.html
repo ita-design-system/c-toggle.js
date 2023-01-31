@@ -3,13 +3,73 @@ layout: libdoc/page-codemirror
 permalink: index.html
 unlisted: true
 ---
-<button c-toggle="bar">bar (trigger)</button>
-<div class=" " c-toggle-name="bar">bar content (target)</div>
-<button c-toggle="foo"
-    data-opened-state-class="c-skin m-bc-0">foo (trigger)</button>
-<div c-toggle-name="foo"
-    class=" "
-    data-opened-state-class="c-skin m-bc-primary-200">foo content (target)</div>
+<nav class="
+    c-dis m-flex m-main-space-between m-cross-center
+    c-pos m-relative
+    c-txt m-ff-lead-400
+    c-skin m-b-4">
+    <span class="
+        c-txt m-ff-lead-700
+        c-dim m-p-4">
+        Logo
+    </span>
+    <menu class="
+        c-dis m-flex m-cross-center
+        c-dim m-p-0 m-m-0
+        c-skin m-ls-none m-p-0 m-m-0">
+        <li class="c-dis m-flex">
+            <a href="#" class="c-dim m-p-4">Item 1</a>
+        </li>
+        <li class="c-dis m-flex">
+            <a href="#" class="c-dim m-p-4">Item 2</a>
+        </li>
+        <li>
+            <button class="
+                c-dim m-p-4
+                c-txt m-ff-lead-600 m-fs-4
+                c-skin m-bc-primary-300 m-c-primary-800 m-b-0 m-cur-pointer"
+                c-toggle="nav-1"
+                data-dismiss="true">
+                Toggle menu
+            </button>
+            <menu class="u-d-none"
+                c-toggle-name="nav-1"
+                data-opened-state-class="
+                c-dis m-flex m-column
+                c-pos m-absolute m-right-0
+                c-skin m-ls-none">
+                <li class="c-dis m-flex">
+                    <a href="#" 
+                        class="
+                        c-dis m-flex
+                        c-dim m-p-4">
+                        Sous-item 1
+                    </a>
+                </li>
+                <li class="c-dis m-flex">
+                    <a href="#" 
+                        class="
+                        c-dis m-flex
+                        c-dim m-p-4">
+                        Sous-item 2
+                    </a>
+                </li>
+            </menu>
+        </li>
+    </menu>
+</nav>
+<button class="
+    c-dim m-p-4
+    c-txt m-ff-lead-600 m-fs-4
+    c-skin m-bc-primary-500 m-c-neutral-100 m-b-0 m-brad-1 m-cur-pointer"
+    c-toggle="premier">
+    Déclencheur 1
+</button>
+<div class="u-d-none"
+    c-toggle-name="premier"
+    data-opened-state-class="">
+    Cible 1
+</div>
 <!-- DEMO UNIQUEMENT -->
 <style>
     body {

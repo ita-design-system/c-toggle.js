@@ -30,9 +30,7 @@ const cToggle = {
      */
     subjob: function(el, method) {
         // Element must have its own opened state classes defined
-        if (el.getAttribute('c-toggle') !== undefined && el.dataset.openedStateClass !== undefined) {
-            // Split multiple class names
-            const current_el_opened_state_class_array = el.dataset.openedStateClass.split(' ');
+        if (el.dataset.openedStateClass !== undefined) {
             if (method == 'toggle') {
                 // If origin classes are different from current class list
                 if (el.dataset.classOrigin != el.classList.toString()) {
@@ -125,6 +123,11 @@ const cToggle = {
             const current_class_attribute = el_trigger.getAttribute('class') || '';
             // Save current class state
             el_trigger.dataset.classOrigin = current_class_attribute;
+            // If no opened state class attribute
+            if (el_trigger.dataset.openedStateClass === undefined) {
+                // Sets class origin
+                el_trigger.dataset.openedStateClass = current_class_attribute;
+            }
             // Work only if at least one target exists
             if (els_targets.length > 0) {
                 // Add listeners based on data-method
