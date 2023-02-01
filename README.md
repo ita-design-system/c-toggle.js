@@ -30,25 +30,29 @@ cToggle est destiné à être entièrement personnalisé avec le CSS, le Javascr
 
 ```mermaid
 stateDiagram-v2
-    DÉCLENCHEURS<br>+CIBLES<br>_état_fermé --> click
-    click --> DÉCLENCHEURS<br>+CIBLES<br>_état_ouvert
-    DÉCLENCHEURS<br>+CIBLES<br>_état_ouvert --> reclick
-    reclick --> DÉCLENCHEURS<br>+CIBLES<br>_état_fermé
+    DÉCLENCHEUR(S)<br>id1<br>état_fermé --> click
+    CIBLE(S)<br>id1<br>état_fermé --> click
+    click --> DÉCLENCHEUR(S)<br>id1<br>état_ouvert
+    click --> CIBLE(S)<br>id1<br>état_ouvert
+    DÉCLENCHEUR(S)<br>id1<br>état_ouvert --> reclick
+    CIBLE(S)<br>id1<br>état_ouvert --> reclick
+    reclick --> DÉCLENCHEUR(S)<br>id1<br>état_fermé
+    reclick --> CIBLE(S)<br>id1<br>état_fermé
 ```
+
+Configuration simple: un déclencheur, une cible.
+
+[Voir la démo](https://ita-design-system.github.io/c-toggle.js/example-1.html)
 
 ```html
-<button c-toggle="premiere">déclencheur</button>
-<div c-toggle-name="premiere"
-    class="maclasse1 maclasse2 maclasseN"
-    data-opened-state-class="nouvelleclasse1 nouvelleclasse2 nouvelleclasseN">
-    Cible sur le canal "première". 
-    Par défaut, au clic sur le déclencheur, cToggle va appliquer 
-    la valeur de l'attribut "data-opened-state-class" (nouvelleclasse1 nouvelleclasse2 nouvelleclasseN)
-    sur l'attribut "class" (maclasse1 maclasse2 maclasseN).
-
-    Cet état s'appelle l'état ouvert
-</div>
+<button c-toggle="ex1">déclencheur</button>
+<p c-toggle-name="ex1"
+    class="u-d-none"
+    data-opened-state-class="">
+    Je suis la cible cToggle câblée sur le canal "ex1"
+</p>
 ```
+
 
 ## Méthodes
 

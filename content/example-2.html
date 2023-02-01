@@ -1,0 +1,26 @@
+---
+title: Multiples déclencheurs 1 cible
+description: Plusieurs déclencheurs câblés sur une cible seule
+layout: libdoc/page-codemirror
+category: Exemples
+order: 90
+---
+<button c-toggle="ex2">déclencheur 1</button> 
+<button c-toggle="ex2">déclencheur 2</button> 
+<p c-toggle-name="ex2"
+    class="u-d-none"
+    data-opened-state-class="">
+    Je suis la cible cToggle câblée sur le canal "ex2".<br>
+    <button c-toggle="ex2">déclencheur 3</button> 
+</p>
+<!-- DEMO UNIQUEMENT -->
+<style>
+    body {
+        padding: var(--ita-spacing-4);
+        color: var(--ita-color-primary-800);
+        font-family: var(--ita-font-family-mono);
+        font-size: 1rem;
+        line-height: 1.5rem;
+        padding-bottom: 50vh;
+    }
+</style>
