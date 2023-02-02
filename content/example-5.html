@@ -1,0 +1,30 @@
+---
+title: Clic externe
+description: Retour à l’état fermé lorsque un clic est effectué en dehors du déclencheur ou de sa cible
+layout: libdoc/page-codemirror
+category: Exemples
+order: 120
+---
+<button c-toggle="ex1" data-dismiss="true">déclencheur</button>
+<p c-toggle-name="ex1"
+    class="u-d-none"
+    data-opened-state-class="c-skin m-bc-primary-100">
+    Je suis la cible cToggle câblée sur le canal "ex1". Avec <br>data-dismiss="true" <br>Je me ferme si un clic est effectué en dehors de cette cible.
+</p>
+<button c-toggle="ex2">déclencheur par défaut</button>
+<p c-toggle-name="ex2"
+    class="u-d-none"
+    data-opened-state-class="c-skin m-bc-primary-300">
+    Je suis la cible cToggle câblée sur le canal "ex2". Je me ferme que si un déclencheur ou une méthode sont invoqués.
+</p>
+<!-- DEMO UNIQUEMENT -->
+<style>
+    body {
+        padding: var(--ita-spacing-4);
+        color: var(--ita-color-primary-800);
+        font-family: var(--ita-font-family-mono);
+        font-size: 1rem;
+        line-height: 1.5rem;
+        padding-bottom: 50vh;
+    }
+</style>

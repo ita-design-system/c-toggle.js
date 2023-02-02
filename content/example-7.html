@@ -1,0 +1,26 @@
+---
+title: Mouseover
+description: Bascule le canal spécifié vers l’état ouvert lorsque le pointeur entre dans la zone d’un déclencheur et vers l’état fermé quand il en sort
+layout: libdoc/page-codemirror
+category: Exemples
+order: 140
+---
+<button c-toggle="ex1" data-event="mouseover">déclencheur</button>
+<p c-toggle-name="ex1"
+    class="u-d-none"
+    data-opened-state-class=" 
+    c-dim m-p-6
+    c-skin m-bc-primary-100">
+    Je suis la cible cToggle câblée sur le canal "ex1". Avec <br>data-event="mouseover" <br>Je bascule vers l'état ouvert lorsque le pointeur entre dans la zone d'un déclencheur et vers l'état fermé quand il en sort.
+</p>
+<!-- DEMO UNIQUEMENT -->
+<style>
+    body {
+        padding: var(--ita-spacing-4);
+        color: var(--ita-color-primary-800);
+        font-family: var(--ita-font-family-mono);
+        font-size: 1rem;
+        line-height: 1.5rem;
+        padding-bottom: 50vh;
+    }
+</style>
