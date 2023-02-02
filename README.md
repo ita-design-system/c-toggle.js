@@ -38,7 +38,7 @@ stateDiagram-v2
 
 ### Configuration simple: un déclencheur, une cible.
 
-[Voir la démo](https://ita-design-system.github.io/c-toggle.js/example-1.html)
+[Voir la démo](https://ita-design-system.github.io/c-toggle.js/content/example-1.html)
 
 ```html
 <button c-toggle="ex1">déclencheur</button>
@@ -51,7 +51,7 @@ stateDiagram-v2
 
 ### Multiples déclencheurs 1 cible
 
-[Voir la démo](https://ita-design-system.github.io/c-toggle.js/example-2.html)
+[Voir la démo](https://ita-design-system.github.io/c-toggle.js/content/example-2.html)
 
 ```html
 <button c-toggle="ex2">déclencheur 1</button> 
@@ -66,7 +66,7 @@ stateDiagram-v2
 
 ### 1 déclencheur multiples cibles
 
-[Voir la démo](https://ita-design-system.github.io/c-toggle.js/example-3.html)
+[Voir la démo](https://ita-design-system.github.io/c-toggle.js/content/example-3.html)
 
 ```html
 <button c-toggle="ex3">déclencheur</button> 
@@ -95,7 +95,7 @@ stateDiagram-v2
 
 ### Multiples déclencheur multiples cibles
 
-[Voir la démo](https://ita-design-system.github.io/c-toggle.js/example-4.html)
+[Voir la démo](https://ita-design-system.github.io/c-toggle.js/content/example-4.html)
 
 ```html
 <button c-toggle="canal_1" 
@@ -155,7 +155,7 @@ stateDiagram-v2
 
 L'attribut `data-dismiss="true"` permet le retour à l’état fermé du canal spéccifié lorsque un clic est effectué en dehors d'un déclencheur ou d'une cible.
 
-[Voir la démo](https://ita-design-system.github.io/c-toggle.js/example-5.html)
+[Voir la démo](https://ita-design-system.github.io/c-toggle.js/content/example-5.html)
 
 ```html
 <button c-toggle="ex1" data-dismiss="true">déclencheur</button>
@@ -170,7 +170,7 @@ L'attribut `data-dismiss="true"` permet le retour à l’état fermé du canal s
 
 L'attribut `data-event="mouseenter"` permet de basculer le canal spécifié vers l’état ouvert lorsque le pointeur passe dans la zone d'un déclencheur.
 
-[Voir la démo](https://ita-design-system.github.io/c-toggle.js/example-6.html)
+[Voir la démo](https://ita-design-system.github.io/c-toggle.js/content/example-6.html)
 
 ```html
 <button c-toggle="ex1" data-event="mouseenter">déclencheur</button>
@@ -192,7 +192,7 @@ L'attribut `data-event="mouseenter"` permet de basculer le canal spécifié vers
 
 L'attribut `data-event="mouseover"` permet de basculer le canal spécifié vers l’état ouvert lorsque le pointeur entre dans la zone d’un déclencheur et vers l’état fermé quand il en sort.
 
-[Voir la démo](https://ita-design-system.github.io/c-toggle.js/example-7.html)
+[Voir la démo](https://ita-design-system.github.io/c-toggle.js/content/example-7.html)
 
 ```html
 <button c-toggle="ex1" data-event="mouseover">déclencheur</button>
