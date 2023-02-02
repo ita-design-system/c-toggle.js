@@ -31,11 +31,9 @@ cToggle est destiné à être entièrement personnalisé avec le CSS, le Javascr
 ```mermaid
 stateDiagram-v2
     DÉCLENCHEUR(S)<br>id1<br>état_fermé --> click
-    CIBLE(S)<br>id1<br>état_fermé --> click
     click --> DÉCLENCHEUR(S)<br>id1<br>état_ouvert
     click --> CIBLE(S)<br>id1<br>état_ouvert
     DÉCLENCHEUR(S)<br>id1<br>état_ouvert --> reclick
-    CIBLE(S)<br>id1<br>état_ouvert --> reclick
     reclick --> DÉCLENCHEUR(S)<br>id1<br>état_fermé
     reclick --> CIBLE(S)<br>id1<br>état_fermé
 ```
