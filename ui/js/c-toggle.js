@@ -37,7 +37,7 @@ const cToggle = {
     subjob: function(el, method) {
         // Element must have its own opened state classes defined
         if (el.dataset.openedStateClass !== undefined) {
-            if (method == 'cToggle.methods.toggle') {
+            if (method == cToggle.methods.toggle) {
                 // If origin classes are different from current class list
                 if (el.dataset.classOrigin != el.classList.toString()) {
                     // Retrieve and apply saved class origin
