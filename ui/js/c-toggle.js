@@ -5,6 +5,12 @@
 * https://github.com/ita-design-system/c-toggle.js
 */
 const cToggle = {
+    // Toggle methods enums
+    methods: {
+        add: 'add',
+        remove: 'remove',
+        toggle: 'toggle'
+    },
     // Toggle ids that need to be closed when user clicks on document excepting on triggers nor targets
     // Array is populated on update method invoke
     dismissableIds: [],
@@ -31,7 +37,7 @@ const cToggle = {
     subjob: function(el, method) {
         // Element must have its own opened state classes defined
         if (el.dataset.openedStateClass !== undefined) {
-            if (method == 'toggle') {
+            if (method == 'cToggle.methods.toggle') {
                 // If origin classes are different from current class list
                 if (el.dataset.classOrigin != el.classList.toString()) {
                     // Retrieve and apply saved class origin
@@ -40,10 +46,10 @@ const cToggle = {
                     // Apply replacement classes
                     el.setAttribute('class', el.dataset.openedStateClass);
                 }
-            } else if (method == 'add') {
+            } else if (method == cToggle.methods.add) {
                 // Apply replacement classes
                 el.setAttribute('class', el.dataset.openedStateClass);
-            } else if (method == 'remove') {
+            } else if (method == cToggle.methods.remove) {
                 // Retrieve and apply saved class origin
                 el.setAttribute('class', el.dataset.classOrigin);
             }
@@ -56,7 +62,7 @@ const cToggle = {
      * @param {String} method method to apply
      */
     job: function(id, method) {
-        if (typeof id == 'string' && (method == 'add' || method == 'remove' || method == 'toggle')) {
+        if (typeof id == 'string' && method in cToggle.methods) {
             if (typeof cToggle.instances[id] == 'object') {
                 // JOB FOR TRIGGERS
                 cToggle.instances[id].triggers.forEach(function(el) {
@@ -75,7 +81,7 @@ const cToggle = {
      * @param {String} id id of the toggle to open
      */
     open: function(id) {
-        cToggle.job(id, 'add');
+        cToggle.job(id, cToggle.methods.add);
     },
     /**
      * CLOSE
@@ -83,7 +89,7 @@ const cToggle = {
      * @param {String} id id of the toggle to close
      */
     close: function(id) {
-        cToggle.job(id, 'remove');
+        cToggle.job(id, cToggle.methods.remove);
     },
     /**
      * TOGGLE
@@ -91,7 +97,7 @@ const cToggle = {
      * @param {String} id id of the toggle
      */
     toggle: function(id) {
-        cToggle.job(id, 'toggle');
+        cToggle.job(id, cToggle.methods.toggle);
     },
     // Object populated by update() method
     instances: {
