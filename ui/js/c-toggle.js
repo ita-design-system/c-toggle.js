@@ -140,36 +140,21 @@ const cToggle = {
                 if (event_name !== undefined) {
                     // Type of listener
                     if (event_name == 'mousehover' || event_name == 'mouseover') {
-                        el_trigger.addEventListener('mouseenter', function() {
-                            cToggle.open(toggle_id);
-                        });
-                        el_trigger.addEventListener('mouseleave', function() {
-                            cToggle.close(toggle_id);
-                        });
+                        el_trigger.addEventListener('mouseenter', cToggle.handlers.mouseenter);
+                        el_trigger.addEventListener('mouseleave', cToggle.handlers.mouseleave);
                     }
                     else if (event_name == 'mouseenter') {
-                        el_trigger.addEventListener('mouseenter', function() {
-                            cToggle.open(toggle_id);
-                        });
+                        el_trigger.addEventListener('mouseenter', cToggle.handlers.mouseenter);
                     }
                 }
                 // Default method applied
                 else  {
-                    el_trigger.addEventListener('click', function() {
-                        cToggle.toggle(toggle_id);
-                    });
+                    el_trigger.addEventListener('click', cToggle.handlers.click);
                 }
-                // Write instance
-                // If first pass
-                if (cToggle.instances[toggle_id] === undefined) {
-                    cToggle.instances[toggle_id] = {
-                        triggers: [el_trigger],
-                        targets: els_targets
-                    }
-                }
-                // Otherwise
-                else {
-                    cToggle.instances[toggle_id].triggers.push(el_trigger);
+                // Write/overwrite instance
+                cToggle.instances[toggle_id] = {
+                    triggers: [el_trigger],
+                    targets: els_targets
                 }
                 // Dismissable triggers and targets
                 // Toggles that need to be closed when user clicks outside toggles triggers and targets
@@ -180,6 +165,23 @@ const cToggle = {
         });
         // Bind document click to enable dismiss feature
         document.addEventListener('click', cToggle.documentClick);
+    },
+    handlers: {
+        // On click on a trigger, get id and toggle
+        click: function(e) {
+            const target_id = e.target.getAttribute('c-toggle');
+            cToggle.toggle(target_id);
+        },
+        // On mouse enter a trigger, get id and open
+        mouseenter: function(e) {
+            const target_id = e.target.getAttribute('c-toggle');
+            cToggle.open(target_id);
+        },
+        // On mouse leave a trigger, get id and close
+        mouseleave: function(e) {
+            const target_id = e.target.getAttribute('c-toggle');
+            cToggle.close(target_id);
+        }
     }
 }
 cToggle.update();
