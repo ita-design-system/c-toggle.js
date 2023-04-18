@@ -1,4 +1,5 @@
 # c-toggle.js
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/ita-design-system/c-toggle.js?style=for-the-badge)
 
 Librairie Javascript dédiée à la bascule d’état des classes CSS d’un élément.
 
