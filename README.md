@@ -38,6 +38,12 @@ https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js@<TAG_VERSION>/ui/js/c-
 
 <!-- Typologie numéro de version + minification automatique -->
 https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js@<TAG_VERSION>/ui/js/c-toggle.min.js
+
+<!-- Exemple avec version v0.1.2 -->
+https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js@v0.1.2/ui/js/c-toggle.js
+
+<!-- Exemple avec version v0.1.2 minifié -->
+https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js@v0.1.2/ui/js/c-toggle.min.js
 ```
 
 ## Usage
