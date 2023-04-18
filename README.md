@@ -12,11 +12,32 @@ cToggle est destiné à être personnalisé avec le CSS, le Javascript impliqué
 
 ## Installation
 
+Il est recommandé de placer les fichiers dans cet ordre avant la balise fin de body.
+
+### En local
+
 ```html
 <body>
-    <!-- Il est recommandé de placer la librairie avant la balise fin de body -->
-    <script src="/path/to/c-toggle.js"></script>
+    <script src="/path/to/c-toggle.js"></script> <!-- obligatoire -->
 </body>
+```
+
+### Sur CDN
+
+via [https://www.jsdelivr.com/](https://www.jsdelivr.com/)
+
+```html
+<!-- Version la plus récente -->
+https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js/ui/js/c-toggle.js
+
+<!-- Version la plus récente minifiée -->
+https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js/ui/js/c-toggle.min.js
+
+<!-- Typologie avec numéro de version -->
+https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js@<TAG_VERSION>/ui/js/c-toggle.js
+
+<!-- Typologie numéro de version + minification automatique -->
+https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js@<TAG_VERSION>/ui/js/c-toggle.min.js
 ```
 
 ## Usage
