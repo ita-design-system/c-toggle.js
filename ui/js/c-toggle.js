@@ -1,6 +1,6 @@
 /**
 * C-TOGGLE
-* v0.1.0
+* v0.1.2
 * Toggle management
 * https://github.com/ita-design-system/c-toggle.js
 */
@@ -169,17 +169,17 @@ const cToggle = {
     handlers: {
         // On click on a trigger, get id and toggle
         click: function(e) {
-            const target_id = e.target.getAttribute('c-toggle');
+            const target_id = e.target.closest('[c-toggle]').getAttribute('c-toggle');
             cToggle.toggle(target_id);
         },
         // On mouse enter a trigger, get id and open
         mouseenter: function(e) {
-            const target_id = e.target.getAttribute('c-toggle');
+            const target_id = e.target.closest('[c-toggle]').getAttribute('c-toggle');
             cToggle.open(target_id);
         },
         // On mouse leave a trigger, get id and close
         mouseleave: function(e) {
-            const target_id = e.target.getAttribute('c-toggle');
+            const target_id = e.target.closest('[c-toggle]').getAttribute('c-toggle');
             cToggle.close(target_id);
         }
     }
