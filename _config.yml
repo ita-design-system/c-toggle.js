@@ -186,6 +186,7 @@ playground:
     # Absolute URL starting with 'http'
     scripts_body: # Javascript files near </body>. Can be either relative URL from site root, absolute URL starting with 'http'
         - /ui/js/c-toggle.js
+        - /ui/js/custom-event.js
         # - /js/my-toggle-native.js
         # - /js/my-tabs-options.js
         # - /js/my-tabs-native.js
