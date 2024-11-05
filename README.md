@@ -194,6 +194,8 @@ L'attribut `data-dismiss="true"` permet le retour à l’état fermé du canal s
 </p>
 ```
 
+Par défaut, la fermeture d’un "dismiss" n’est pas propagée à l’intérieur d’un toggle. Il est possible de forcer cette fermeture en ajoutant l’attribut `data-onclick-force-dismiss-children-ids="[liste_d_ids]"` sur un `c-toggle` ou un `c-toggle-name`. [Exemple sur la démo](https://ita-design-system.github.io/c-toggle.js/content/example-5.html)
+
 ### Mouseenter
 
 L'attribut `data-event="mouseenter"` permet de basculer le canal spécifié vers l’état ouvert lorsque le pointeur passe dans la zone d'un déclencheur.
@@ -235,7 +237,6 @@ L'attribut `data-event="mouseover"` permet de basculer le canal spécifié vers 
 </p>
 ```
 
-
 ## Méthodes
 
 ```javascript
@@ -266,4 +267,17 @@ cToggle.close(channel)
  */
 cToggle.toggle(channel)
 
+```
+
+## Événements
+
+À chaque changement d’état d’une instance de cToggle, l’événement personnnalisé `cToggle_event` est propagé sur le document avec en option l’identifiant de l’instance et la méthode utilisée: `open`, `close` ou `toggle`.
+
+Tous les exemples de la documentation sont visibles dans la console du navigateur avec l’écoute suivante:
+
+```javascript
+const myHandler = function(evt) {
+    console.log(`cToggle "${evt.detail.id}" a été invoqué avec la méthode "${evt.detail.method}"`)
+}
+document.addEventListener('cToggle_event', myHandler);
 ```

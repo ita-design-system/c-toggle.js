@@ -1,6 +1,6 @@
 /**
 * C-TOGGLE
-* v0.1.2
+* v0.2.0
 * Toggle management
 * https://github.com/ita-design-system/c-toggle.js
 */
@@ -21,11 +21,21 @@ const cToggle = {
     documentClick: function(event) {
         // Potential toggle target or trigger as ancestor
         const el_closest_toggle = event.target.closest('[c-toggle], [c-toggle-name]');
-        // Click is anywhere but in a toggle trigger nor a target
         if (el_closest_toggle === null) {
+            // Click is anywhere but in a toggle trigger nor a target
             cToggle.dismissableIds.forEach(function(toggle_id) {
                 cToggle.close(toggle_id);
             });
+        } else {
+            // Special case: user sets ids to force close on dataset "data-onclick-force-dismiss-children-ids"
+            const close_children_ids = el_closest_toggle.dataset.onclickForceDismissChildrenIds;
+            if (close_children_ids !== undefined) {
+                cToggle.dismissableIds.forEach(function(toggle_id) {
+                    if (close_children_ids.indexOf(toggle_id) > -1) {
+                        cToggle.close(toggle_id);
+                    }
+                });
+            }
         }
     },
     /**
@@ -82,6 +92,9 @@ const cToggle = {
      */
     open: function(id) {
         cToggle.job(id, cToggle.methods.add);
+        // Create custom event
+        const event = new CustomEvent(`cToggle_event`, { detail: {id: id, method: 'open'} });
+        document.dispatchEvent(event);
     },
     /**
      * CLOSE
@@ -90,6 +103,9 @@ const cToggle = {
      */
     close: function(id) {
         cToggle.job(id, cToggle.methods.remove);
+        // Create custom event
+        const event = new CustomEvent(`cToggle_event`, { detail: {id: id, method: 'close'} });
+        document.dispatchEvent(event);
     },
     /**
      * TOGGLE
@@ -98,6 +114,9 @@ const cToggle = {
      */
     toggle: function(id) {
         cToggle.job(id, cToggle.methods.toggle);
+        // Create custom event
+        const event = new CustomEvent(`cToggle_event`, { detail: {id: id, method: 'toggle'} });
+        document.dispatchEvent(event);
     },
     // Object populated by update() method
     instances: {

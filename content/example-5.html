@@ -8,14 +8,44 @@ order: 120
 <button c-toggle="ex1" data-dismiss="true">déclencheur</button>
 <p c-toggle-name="ex1"
     class="u-d-none"
+    data-onclick-force-dismiss-children-ids="ex3"
     data-opened-state-class="c-skin m-bc-primary-100">
-    Je suis la cible cToggle câblée sur le canal "ex1". Avec <br>data-dismiss="true" <br>Je me ferme si un clic est effectué en dehors de cette cible.
+    Cible ex2. Je suis la cible cToggle câblée sur le canal "ex1".
+    Avec <br>data-dismiss="true" <br>Je me ferme si un clic est effectué en dehors de cette cible.
+    Au clic sur ce paragraphe <code>data-onclick-force-dismiss-children-ids="ex3"</code> force la fermeture de la cible <code>ex3</code>
+    <button c-toggle="ex3" data-dismiss="true">déclencheur 3</button>
+    <span c-toggle-name="ex3"
+        class="u-d-none"
+        data-opened-state-class="c-skin m-bc-support-warning-100 m-c-support-warning-500">
+        Cible ex3. Je me ferme lorsque le contenu de <code>ex1</code> est cliqué.
+    </span>
+    <button c-toggle="ex4" data-dismiss="true">déclencheur 4</button>
+    <span c-toggle-name="ex4"
+        class="u-d-none"
+        data-opened-state-class="c-skin m-bc-support-success-100 m-c-support-success-500">
+        Cible ex4. Je reste ouvert même si le contenu de <code>ex1</code> est cliqué.
+    </span>
 </p>
+<br><br>
 <button c-toggle="ex2">déclencheur par défaut</button>
 <p c-toggle-name="ex2"
     class="u-d-none"
+    data-onclick-force-dismiss-children-ids="ex5,ex6"
     data-opened-state-class="c-skin m-bc-primary-300">
-    Je suis la cible cToggle câblée sur le canal "ex2". Je me ferme que si un déclencheur ou une méthode sont invoqués.
+    Cible ex2. Je suis la cible cToggle câblée sur le canal "ex2".
+    Je me ferme que si un déclencheur ou une méthode sont invoqués.
+    <button c-toggle="ex5" data-dismiss="true">déclencheur 5</button>
+    <span c-toggle-name="ex5"
+        class="u-d-none"
+        data-opened-state-class="c-skin m-bc-support-warning-100 m-c-support-warning-500">
+        Cible ex5. Je me ferme lorsque le contenu de <code>ex2</code> est cliqué.
+    </span>
+    <button c-toggle="ex6" data-dismiss="true">déclencheur 6</button>
+    <span c-toggle-name="ex6"
+        class="u-d-none"
+        data-opened-state-class="c-skin m-bc-support-success-100 m-c-support-success-500">
+        Cible ex6. Je me ferme lorsque le contenu de <code>ex2</code> est cliqué.
+    </span>
 </p>
 <!-- DEMO UNIQUEMENT -->
 <style>
