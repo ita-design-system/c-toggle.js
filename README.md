@@ -194,6 +194,8 @@ L'attribut `data-dismiss="true"` permet le retour à l’état fermé du canal s
 </p>
 ```
 
+### Clic interne
+
 Par défaut, la fermeture d’un "dismiss" n’est pas propagée à l’intérieur d’un toggle. Il est possible de forcer cette fermeture en ajoutant l’attribut `data-onclick-force-dismiss-children-ids="[liste_d_ids]"` sur un `c-toggle` ou un `c-toggle-name`. [Exemple sur la démo](https://ita-design-system.github.io/c-toggle.js/content/example-5.html)
 
 ### Mouseenter
