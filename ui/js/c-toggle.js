@@ -1,6 +1,6 @@
 /**
 * C-TOGGLE
-* v0.2.0
+* v0.2.1
 * Toggle management
 * https://github.com/ita-design-system/c-toggle.js
 */
@@ -140,7 +140,7 @@ const cToggle = {
             els_targets.forEach(function(el_target) {
                 const current_class_attribute = el_target.getAttribute('class') || '';
                 // Save current class state
-                el_target.dataset.classOrigin = current_class_attribute;
+                if (el_target.dataset.classOrigin === undefined) el_target.dataset.classOrigin = current_class_attribute;
             });
             // Get user settings
             const event_name = el_trigger.dataset.event;
