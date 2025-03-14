@@ -283,3 +283,20 @@ const myHandler = function(evt) {
 }
 document.addEventListener('cToggle_event', myHandler);
 ```
+
+## États
+
+Les états `ouvert` et `fermé` sont spécifiés dans les instances: 
+
+```html
+<button type="button" c-toggle="foo">Déclencheur</button>
+<div c-toggle-name="foo">
+    Ma cible
+</div>
+```
+
+On peut retrouver l'état courant de l'identifiant `foo` comme suit:
+
+```javascript
+cToggle.instances.foo.opened //true ou false
+```

@@ -1,6 +1,6 @@
 /**
 * C-TOGGLE
-* v0.2.1
+* v0.3.0
 * Toggle management
 * https://github.com/ita-design-system/c-toggle.js
 */
@@ -43,8 +43,9 @@ const cToggle = {
      * Apply routine of toggle job
      * @param {Object} el DOM element
      * @param {String} method must be 'add', 'remove' or 'toggle'
+     * @param {String} id id of the toggle 
      */
-    subjob: function(el, method) {
+    subjob: function(el, method, id) {
         // Element must have its own opened state classes defined
         if (el.dataset.openedStateClass !== undefined) {
             if (method == cToggle.methods.toggle) {
@@ -52,16 +53,20 @@ const cToggle = {
                 if (el.dataset.classOrigin != el.classList.toString()) {
                     // Retrieve and apply saved class origin
                     el.setAttribute('class', el.dataset.classOrigin);
+                    cToggle.instances[id].opened = false;
                 } else {
                     // Apply replacement classes
                     el.setAttribute('class', el.dataset.openedStateClass);
+                    cToggle.instances[id].opened = true;
                 }
             } else if (method == cToggle.methods.add) {
                 // Apply replacement classes
                 el.setAttribute('class', el.dataset.openedStateClass);
+                cToggle.instances[id].opened = true;
             } else if (method == cToggle.methods.remove) {
                 // Retrieve and apply saved class origin
                 el.setAttribute('class', el.dataset.classOrigin);
+                cToggle.instances[id].opened = false;
             }
         }
     },
@@ -76,11 +81,11 @@ const cToggle = {
             if (typeof cToggle.instances[id] == 'object') {
                 // JOB FOR TRIGGERS
                 cToggle.instances[id].triggers.forEach(function(el) {
-                    cToggle.subjob(el, method);
+                    cToggle.subjob(el, method, id);
                 });
                 // JOB FOR TARGETS
                 cToggle.instances[id].targets.forEach(function(el) {
-                    cToggle.subjob(el, method);
+                    cToggle.subjob(el, method, id);
                 });
             }
         }
@@ -173,7 +178,8 @@ const cToggle = {
                 // Write/overwrite instance
                 cToggle.instances[toggle_id] = {
                     triggers: [el_trigger],
-                    targets: els_targets
+                    targets: els_targets,
+                    opened: false
                 }
                 // Dismissable triggers and targets
                 // Toggles that need to be closed when user clicks outside toggles triggers and targets
