@@ -1,0 +1,42 @@
+---
+layout: libdoc_page.liquid
+pagination:
+    data: collections.myTags
+    size: 1
+    alias: tag
+permalink: "tags/{{ tag }}/index.html"
+date: false
+author: false
+# eleventyExcludeFromCollections: true
+# eleventyNavigation:
+#     parent: Tags list
+#     key: tag
+---
+{% assign pages_with_tag = collections[tag] | sort: 'date' %}
+{% assign pages_with_tag = pages_with_tag | reverse %}
+<div>
+    <ul class="d-flex fd-column gap-5 | m-0 pl-0 pt-5 | ls-none blwidth-1 blstyle-dashed bcolor-neutral-500">
+        {% for item in pages_with_tag %}
+            <li class="d-flex ai-center">
+                <div class="pos-absolute t-tX-50 | p-1 | bc-primary-500 brad-4"></div>
+                <div class="pl-10 | bbwidth-1 bbstyle-dashed bcolor-neutral-500" pl-5="xs"></div>
+                <a  href="{{ item.page.url }}"
+                    class="d-flex fd-column gap-3 fg-1 | p-5 | td-none | bc-primary-100 brad-2 bwidth-1 bstyle-dashed bcolor-primary-500">
+                    <span class="d-flex ai-center gap-2 | fvs-wght-400 fs-3 lsp-3 lh-3 | c-primary-900"
+                        fs-2="xs">
+                        <span class="icon-calendar-dots"></span>
+                        <span ws-nowrap="sm,md">
+                            <span class="ws-nowrap">{{ libdocMessages.lastModified[pageLang] }}</span>
+                            {{ item.page.date|dateString }}
+                        </span>
+                    </span>
+                    <strong class="fs-7 fvs-wght-600 lh-3"
+                        fs-6="xs">
+                        {{ item.data.eleventyNavigation.key | default: item.data.title | default: item.page.inputPath }}
+                    </strong>
+                    <span class="fs-3 fvs-wght-400 lh-5 c-primary-900">{{ item.data.description }}</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

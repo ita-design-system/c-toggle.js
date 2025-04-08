@@ -1,0 +1,22 @@
+---
+layout: libdoc_page.liquid
+date: false
+pagination:
+  data: collections.postsByDateDescending
+  size: 2
+  alias: posts
+permalink: "{{ libdocConfig.blogSlug }}/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
+---
+{% comment %} {% assign blog_data = posts | sort: 'date' %} {% endcomment %}
+{% comment %} {% assign blog_data = blog_data | reverse %} {% endcomment %}
+<ol>
+{% for item in posts %}
+    <li>{{ item.page.date|dateString }}
+        <a href="{{ item.url }}">{{ item.data.eleventyNavigation.key | default: item.data.title | default: item.page.inputPath }}</a>
+    </li>
+{% endfor %}
+</ol>
+
+{%- for pageEntry in pagination.pages %}
+<li><a href="{{ pagination.hrefs[ forloop.index0 ] }}"{% if page.url == pagination.hrefs[ forloop.index0 ] %} aria-current="page"{% endif %}>Page {{ forloop.index }}</a></li>
+{%- endfor %}
