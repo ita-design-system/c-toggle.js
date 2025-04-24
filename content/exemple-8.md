@@ -29,7 +29,7 @@ permalink: "{{ eleventyNavigation.key | slugify }}/index.html"
     bc-support-success c-support-success">
     Je suis la cible ex1
 </p>
-<script src="/assets/c-toggle.js"></script>
+<script src="{{ libdocConfig.htmlBasePathPrefix }}assets/c-toggle.js"></script>
 <script>
     const myHandler = function(evt) {
         notif.innerText = `cToggle "${evt.detail.id}" a été invoqué avec la méthode "${evt.detail.method}"`;

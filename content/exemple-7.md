@@ -13,7 +13,7 @@ permalink: "{{ eleventyNavigation.key | slugify }}/index.html"
     data-opened-state-class="p-6 bc-support-success c-support-success">
     Je suis la cible cToggle câblée sur le canal "ex1". Avec <br><code>data-event="mouseover"</code> <br>Je bascule vers l'état ouvert lorsque le pointeur entre dans la zone d'un déclencheur et vers l'état fermé quand il en sort.
 </p>
-<script src="/assets/c-toggle.js"></script>
+<script src="{{ libdocConfig.htmlBasePathPrefix }}assets/c-toggle.js"></script>
 <!-- DEMO UNIQUEMENT -->
 <style>
     .d-none {

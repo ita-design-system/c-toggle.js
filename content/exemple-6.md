@@ -18,7 +18,7 @@ permalink: "{{ eleventyNavigation.key | slugify }}/index.html"
     ou créer un autre déclencheur <code>c-toggle="ex1"</code> :<br>
     <button c-toggle="ex1">fermer avec un autre déclencheur</button>
 </p>
-<script src="/assets/c-toggle.js"></script>
+<script src="{{ libdocConfig.htmlBasePathPrefix }}assets/c-toggle.js"></script>
 <!-- DEMO UNIQUEMENT -->
 <style>
     .d-none {

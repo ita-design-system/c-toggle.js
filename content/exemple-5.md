@@ -49,7 +49,7 @@ permalink: "{{ eleventyNavigation.key | slugify }}/index.html"
         Cible ex6. Je me ferme lorsque le contenu de <code>ex2</code> est cliqué.
     </span>
 </p>
-<script src="/assets/c-toggle.js"></script>
+<script src="{{ libdocConfig.htmlBasePathPrefix }}assets/c-toggle.js"></script>
 <!-- DEMO UNIQUEMENT -->
 <style>
     .d-none {

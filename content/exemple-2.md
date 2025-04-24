@@ -14,7 +14,7 @@ permalink: "{{ eleventyNavigation.key | slugify }}/index.html"
     Je suis la cible cToggle câblée sur le canal "ex2".<br>
     <button c-toggle="ex2">déclencheur 3</button> 
 </p>
-<script src="/assets/c-toggle.js"></script>
+<script src="{{ libdocConfig.htmlBasePathPrefix }}assets/c-toggle.js"></script>
 <!-- DEMO UNIQUEMENT -->
 <style>
     .d-none {
