@@ -16,5 +16,21 @@
             </li>
         {% endfor %}
     {% endif %}
+    {% if pageUrlSplit[1] == libdocConfig.blogSlug and pageUrlSplit[2].size > 0 %}
+        <li class="d-flex ai-baseline gap-2">
+            <a  href="/{{ libdocConfig.blogSlug }}/"
+                class="fvs-wght-400 ws-nowrap">
+                {{ libdocConfig.blogTitle }}
+            </a> /
+        </li>
+    {% endif %}
+    {% if tag %}
+        <li class="d-flex ai-baseline gap-2">
+            <a  href="/tags/"
+                class="fvs-wght-400 ws-nowrap">
+                {{ libdocMessages.tagsList[libdocConfig.lang] }}
+            </a> /
+        </li>
+    {% endif %}
     <li class="c-neutral-800 ws-nowrap">{{ pageTitle }}</li>
 </ul>

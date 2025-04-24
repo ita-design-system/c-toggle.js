@@ -47,6 +47,10 @@
         "en": "Home",
         "fr": "Accueil"
     },
+    "inANewTab": {
+        "en": "In a new tab",
+        "fr": "Dans un nouvel onglet"
+    },
     "lastModified": {
         "en": "Last modified",
         "fr": "Dernière modification"
@@ -138,6 +142,10 @@
     "tableOfContent": {
         "en": "Table of content",
         "fr": "Table des matières"
+    },
+    "tag": {
+        "en": "Tag",
+        "fr": "Tag"
     },
     "tagsList": {
         "en": "Tags list",

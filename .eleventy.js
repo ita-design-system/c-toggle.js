@@ -2,6 +2,7 @@ import { EleventyRenderPlugin } from "@11ty/eleventy";
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import libdocMessages from "./_data/libdocMessages.json" with { "type": "json" };
 import libdocConfig from "./_data/libdocConfig.json" with { "type": "json" };
 import libdocUtils from "./_data/libdocUtils.js";
@@ -9,7 +10,7 @@ import libdocUtils from "./_data/libdocUtils.js";
 // import Image from "@11ty/eleventy-img";
 
 export default function(eleventyConfig) {
-
+    eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
     eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
@@ -31,6 +32,9 @@ export default function(eleventyConfig) {
 
             return `${libdocUtils.slugify(filename)}-${id}-__${width}__.${format}`;
         },
+        // transform: (sharp) => {
+        //     sharp.trim();
+        // },
 
 		// optional, attributes assigned on <img> nodes override these values
 		htmlOptions: {
@@ -49,7 +53,7 @@ export default function(eleventyConfig) {
         const anchorsIds = [];
         content = content.replace(/<([a-zA-Z][a-zA-Z0-9_-]*)\b[^>]*>(.*?)<\/\1>/g, function(m,m1,m2){
             let newM = m;
-            if (libdocConfig.toc.htmlTags.includes(m1)) {
+            if (libdocConfig.tocHtmlTags.includes(m1)) {
                 // Add id to the specified html tags
                 let slugifiedId = libdocUtils.slugify(m2);
                 if (anchorsIds.includes(slugifiedId)) {
@@ -74,7 +78,7 @@ export default function(eleventyConfig) {
 	});
 
     eleventyConfig.addAsyncFilter("cleanup", async function (content) {
-        content = content.replaceAll(`<table>`, `<div class="o-auto w-100"><table>`);
+        content = content.replaceAll(`<table>`, `<div class="o-auto w-100 table-wrapper"><table>`);
         content = content.replaceAll(`</table>`, `</table></div>`);
         content = content.replaceAll(`<p><div`, `<div`);
         content = content.replaceAll(`</div></p>`, `</div>`);
@@ -95,9 +99,9 @@ export default function(eleventyConfig) {
 	});
 
     eleventyConfig.addAsyncFilter("toc", async function (content) {
-        const htmlTagsFound = libdocUtils.extractHtmlTagsFromString(content, libdocConfig.toc.htmlTags);
+        const htmlTagsFound = libdocUtils.extractHtmlTagsFromString(content, libdocConfig.tocHtmlTags);
         let tocMarkup = '';
-        if (htmlTagsFound.length > libdocConfig.toc.minTags) {
+        if (htmlTagsFound.length > libdocConfig.tocMinTags) {
             tocMarkup = `
                 <ol class="cgap-3em | m-0 pl-0 pb-5 o-auto | lh-1 | ls-none bwidth-1 bstyle-dashed bcolor-neutral-500 btwidth-0 brwidth-0"
                     d-flex="xs,sm"
@@ -118,7 +122,7 @@ export default function(eleventyConfig) {
                 tocMarkup += `
                     <li class="d-flex">
                         <a  href="#${slugifiedId}"
-                            class="pl-5 pt-1 pb-1 | fs-3 lh-5 fvs-wght-400 | blwidth-1 blstyle-dashed bcolor-neutral-500">
+                            class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 | blwidth-1 blstyle-dashed bcolor-neutral-500">
                             ${htmlTag.value}
                         </a>
                     </li>`;
@@ -163,12 +167,13 @@ export default function(eleventyConfig) {
         const   code = libdocUtils.HTMLEncode(content.replace(/[\n\r]/, '')),
                 title = typeof sandboxTitle == `string` ? sandboxTitle : libdocMessages.sandbox[libdocConfig.lang],
                 iframeAttribute = `srcdoc="${code}"`,
+                enableSwitchId = libdocUtils.generateRandomId(),
                 iframeCommands = `<header class="d-flex jc-space-between | pl-5" style="height: 58px">
                         <div class="d-flex ai-center | fvs-wght-400 fs-3 | c-neutral-500">
                             srcdoc
                         </div>
                     </header>`;
-        return libdocUtils.templates.sandbox({iframeAttribute, iframeCommands, title, code});
+        return libdocUtils.templates.sandbox({iframeAttribute, iframeCommands, title, code, enableSwitchId});
     });
 
     eleventyConfig.addPairedShortcode("sandboxFile", async function(content, permalink, sandboxTitle) {
@@ -206,4 +211,7 @@ export default function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("core/assets");
     eleventyConfig.addPassthroughCopy("favicon.png");
 
+    return {
+        pathPrefix: libdocConfig.htmlBasePathPrefix
+    }
 };

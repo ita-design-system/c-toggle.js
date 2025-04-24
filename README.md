@@ -1,8 +1,5 @@
 ---
 title: c-toggle.js
-# eleventyNavigation:
-#   key: Exemple simple
-#   parent: Exemples
 description: Documentation de la librairie c-toggle.js dédiée à la bascule d’état des classes CSS d’un élément
 layout: libdoc_page.liquid
 permalink: index.html

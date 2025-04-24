@@ -1,6 +1,10 @@
 import libdocMessages from "./libdocMessages.json" with { "type": "json" };
 import libdocConfig from "./libdocConfig.json" with { "type": "json" };
+import libdocPackage from "../package.json" with { "type": "json" };
 export default {
+    version: function() {
+        return libdocPackage.version
+    },
     // environment: process.env.MY_ENVIRONMENT || "development",
     HTMLEncode: function(str) {
         // https://stackoverflow.com/a/784765
@@ -104,7 +108,8 @@ export default {
                                 <input type="checkbox"
                                     id="${enableSwitchId}_code"
                                     value=""
-                                    class="pos-absolute | opa-0 | sandbox__enable_switch">
+                                    class="pos-absolute | opa-0 | sandbox__enable_switch"
+                                    ${libdocConfig.sandboxRunSwitch ? `` : `checked`}>
                                 <label for="${enableSwitchId}_code"
                                     class="d-flex ai-center gap-1 | p-5 | fvs-wght-500 tt-uppercase | bc-neutral-900 brad-2 cur-pointer">
                                     <span class="icon-play"></span>
@@ -135,7 +140,8 @@ export default {
                                 <input type="checkbox"
                                     id="${enableSwitchId}_iframe"
                                     value=""
-                                    class="pos-absolute | opa-0 | sandbox__enable_switch">
+                                    class="pos-absolute | opa-0 | sandbox__enable_switch"
+                                    ${libdocConfig.sandboxRunSwitch ? `` : `checked`}>
                                 <label for="${enableSwitchId}_iframe"
                                     class="d-flex ai-center gap-1 | p-5 | fvs-wght-500 tt-uppercase | bc-neutral-900 brad-2 cur-pointer">
                                     <span class="icon-play"></span> ${libdocMessages.enable[libdocConfig.lang]}

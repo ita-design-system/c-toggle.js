@@ -2,35 +2,36 @@
     "lang": "fr",
     "siteTitle": "c-toggle.js",
     "siteDescription": "Documentation de la librairie c-toggle.js dédiée à la bascule d’état des classes CSS d’un élément",
+    "siteLogoUrl": "",
+    "siteLogoMaxHeight": 60,
     "author": "Olivier 3lanc",
-    "displayAuthor": true,
-    "themeColorHex": "#FFFFFF",
     "faviconUrl": "/favicon.png",
     "ogImageUrl": "",
     "customLinks": [
         {
             "url": "https://github.com/ita-design-system/c-toggle.js",
             "text": "GitHub"
+        },
+        {
+            "url": "https://github.com/ita-design-system",
+            "text": "ITADS"
         }
     ],
     "blogTitle": "Blog",
-    "blogDescription": "Description de mon blog",
-    "blogAuthor": "The Front Club Team",
-    "blogSlug": "posts",
+    "blogDescription": "Description du blog",
+    "blogAuthor": "c-toggle.js Team",
+    "blogSlug": "blog",
     "displayTagsListLink": true,
-    "navigationOptions": {
-        "listElement": "ol",
-        "listItemElement": "li",
-        "listClass": "d-flex fd-column | m-0 pl-0 pt-3 pb-11 | ls-none",
-        "listItemClass": "d-flex fw-wrap ai-center",
-        "listItemHasChildrenClass": "",
-        "activeListItemClass": "",
-        "anchorClass": "d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor",
-        "activeAnchorClass": "",
-        "showExcerpt": false
-    },
-    "toc": {
-        "htmlTags": ["h1", "h2", "h3", "h3", "h4", "h5", "h6"],
-        "minTags": 1
-    }
+    "tocEnabled": true,
+    "tocHtmlTags": ["h1", "h2", "h3", "h4", "h5", "h6"],
+    "tocMinTags": 1,
+    "htmlBasePathPrefix": "/c-toggle.js/",
+    "sandboxRunSwitch": false,
+    "searchEnabled": true,
+    "hljsLanguages": [
+        "xml",
+        "javascript",
+        "yaml",
+        "css"
+    ]
 }

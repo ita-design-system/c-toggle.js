@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 déclencheur multiples cibles</title>
+    
+
+    <meta itemprop="name" content="1 déclencheur multiples cibles">
+    <meta name="description" itemprop="description" content="Un seul déclencheur câblé sur plusieurs cibles">
+    <meta name="application-name" content="1 déclencheur multiples cibles">
+    <meta name="author" content="Olivier 3lanc">
+    <link rel="icon" type="image/png" href="/c-toggle.js/favicon.png">
+    
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="theme-color" content="#FFFFFF">
+    
+    <!-- Microsoft -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="msapplication-starturl" content="/1-declencheur-multiples-cibles/">
+    <meta name="msapplication-tooltip" content="1 déclencheur multiples cibles">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/1-declencheur-multiples-cibles/">
+    <meta property="og:title" content="1 déclencheur multiples cibles">
+    <meta property="og:description" content="Un seul déclencheur câblé sur plusieurs cibles">
+    <meta property="og:image" content="">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="1 déclencheur multiples cibles">
+    <meta name="twitter:description" content="Un seul déclencheur câblé sur plusieurs cibles">
+    <meta name="twitter:url" content="/1-declencheur-multiples-cibles/">
+    <meta name="twitter:image" content="">
+    
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-title" content="1 déclencheur multiples cibles">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF">
+    
+    <!-- Android -->
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="color-scheme" content="light">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <meta name="generator" content="Eleventy v3.0.0">
+    
+    <link rel="stylesheet" href="/c-toggle.js/core/assets/css/ds__defaults.css">
+    <link rel="stylesheet" href="/c-toggle.js/core/assets/css/ds.css">
+    <link rel="stylesheet" href="/c-toggle.js/core/assets/css/hljs/night-owl.css">
+    <link rel="stylesheet" href="/c-toggle.js/core/assets/fonts/icomoon/style.css">
+    <style>
+        :root {
+            --ita-widths-sidebar: 300px;
+            --ita-widths-content: 700px;
+        }
+    </style>
+    <noscript>
+        <link rel="stylesheet" href="/c-toggle.js/core/assets/css/noscript.css">
+    </noscript>
+    
+    
+    
+    
+    <script>
+        const libdocMessages = {
+            
+                copiedToClipboard: `Copié dans le presse-papiers`,
+                code: `Code`,
+                copied: `Copié`,
+                copy: `Copier`,
+                copyCode: `Copier le code`,
+                copyHTML: `Copier le HTML`,
+                copyURL: `Copier l’URL`,
+                enable: `Activer`,
+                goToTopOfPage: `Aller en haut de page`,
+                height: `Hauteur`,
+                homepage: `Page d’accueil`,
+                homepageShort: `Accueil`,
+                inANewTab: `Dans un nouvel onglet`,
+                lastModified: `Dernière modification`,
+                menu: `Menu`,
+                open: `Ouvrir`,
+                openInANewTab: `Ouvrir dans un nouvel onglet`,
+                page: `Page`,
+                pages: `Pages`,
+                pagesTagged: `Pages taguées`,
+                reload: `Recharger`,
+                reloaded: `Rechargé`,
+                result: `Résultat`,
+                sandbox: `Bac à sable`,
+                sandboxResizeHelper: `Cliquer déplacer pour redimensionner code et résultat`,
+                search: `Rechercher`,
+                searchClear: `Effacer la saisie`,
+                searchMinimumCharacters: `3 caractères min.`,
+                searchResultsNoResultForQuery: `Aucun résultat pour la requête`,
+                searchOccurrencesCurrent: `Occurrence actuelle`,
+                searchOccurrencesNext: `Occurrence suivante`,
+                searchOccurrencesPrevious: `Occurrence précédente`,
+                searchOccurrencesStop: `Fermet la recherches d’occurrences`,
+                searchPlaceholder: `Texte à rechercher`,
+                searchSubmit: `Lancer la recherche`,
+                tableOfContent: `Table des matières`,
+                tag: `Tag`,
+                tagsList: `Liste des tags`,
+                tagsListDescription: `Liste de l’ensemble des tags disponibles`,
+                toggleFloatingToc: `Basculer la table des matières flottante`,
+                top: `Haut`,
+                width: `Largeur`,
+        }
+        const libdocConfig = {
+            searchIndexUrl: `/c-toggle.js/core/assets/js/search_index.json`
+        }
+    </script>
+</head>
+<body class="d-flex fd-column | m-0">
+    <div class="d-flex" fd-column="xs,sm" ai-start="md" ai-center="xs,sm" pl-5="md">
+        <div class="d-flex fd-column | pos-sticky top-0 z-2" ai-center="xs,sm" w-100="xs,sm" w-sidebar="md">
+            <nav id="nav_small_devices" class="d-flex | pos-fixed bottom-0 left-0 z-1 | w-100 h-60px" d-none="md">
+                <div class="d-flex jc-space-between | w-100 | bc-neutral-100 btwidth-1 btstyle-dashed bcolor-neutral-500">
+                    <a href="/c-toggle.js/" class="d-flex fd-column jc-center ai-center gap-1 | pl-5 pr-2 | td-none ta-center | c-primary-900 b-0 brad-3">
+                        <span class="icon-house fs-6"></span>
+                        <span class="fvs-wght-400 fs-1 tt-uppercase">Accueil</span>
+                    </a>
+                    
+                        <a href="/c-toggle.js/search/" class="d-flex fd-column jc-center ai-center gap-1 | pl-2 pr-2 | td-none ta-center | c-primary-900 b-0 brad-3">
+                            <span class="icon-magnifying-glass fs-6"></span>
+                            <span class="fvs-wght-400 fs-1 tt-uppercase">Rechercher</span>
+                        </a>
+                    
+                    <button type="button" id="sd_floating_toc_toggle_btn" class="d-flex fd-column jc-center ai-center gap-1 | pl-2 pr-2 | ta-center | cur-pointer c-primary-900 bc-neutral-100 b-0 brad-3" disabled="">
+                        <span class="icon-list-dashes fs-6"></span>
+                        <span class="fvs-wght-400 fs-1 tt-uppercase">Table des matières</span>
+                    </button>
+                    <button type="button" id="sd_gtt_btn" class="d-flex fd-column jc-center ai-center gap-1 | pl-2 pr-2 | ta-center | cur-pointer c-primary-900 bc-neutral-100 b-0 brad-3" onclick="libdocUi.handlers._clickGTT()">
+                        <span class="icon-arrow-line-up fs-6"></span>
+                        <span class="fvs-wght-400 fs-1 tt-uppercase">Haut</span>
+                    </button>
+                    <button type="button" class="d-flex fd-column jc-center ai-center gap-1 | pl-2 pr-5 | ta-center | cur-pointer c-primary-900 bc-neutral-100 b-0 brad-3" c-toggle="nav_primary" data-dismiss="true">
+                        <span class="icon-list fs-6" c-toggle-name="nav_primary" data-opened-state-class="icon-x fs-6"></span>
+                        <span class="fvs-wght-400 fs-1 tt-uppercase">Menu</span>
+                    </button>
+                </div>
+            </nav>
+            <nav id="nav_primary_container" class="d-flex d-none--xs d-none--sm fd-column | w-100 h-sidebar o-hidden | bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500" mt-5="md" maxw-sidebar="md" brad-3="md" c-toggle-name="nav_primary" data-opened-state-class="d-flex fd-column | w-100 h-sidebar o-hidden | bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500">
+                <menu id="nav_primary_header" class="d-flex fd-column | pos-sticky top-0 z-1 | m-0 p-0  | ls-none bc-neutral-100 bbwidth-1 bbstyle-dashed bcolor-neutral-500" gap-5="md" bradtl-3="md" bradtr-3="md">
+                    <li class="d-flex ai-center">
+                        
+                            <a href="/c-toggle.js/" class="p-5 | td-none fvs-wght-700 lsp-5 fs-8 tws-balance | c-neutral-900" title="Documentation de la librairie c-toggle.js dédiée à la bascule d’état des classes CSS d’un élément">
+                                c-toggle.js
+                            </a>
+                        
+                    </li>
+                    
+                        <li d-none="xs,sm">
+                            <form action="/c-toggle.js/search/" class="d-flex fd-column | pos-relative | pl-5 pr-5 | search_form">
+                                <label for="searchInput" class="pos-absolute | ml-5 t-tY-50 | fvs-wght-400 fs-1 tt-uppercase | bc-neutral-100">
+                                    Rechercher
+                                </label>
+                                <input id="searchInput" type="search" name="search" class="pl-5 pr-5 pt-4 pb-4 | fs-3 | bc-neutral-100 brad-4 bwidth-1 bstyle-dashed bcolor-neutral-500" placeholder="Texte à rechercher" value="">
+                                <div class="d-flex ai-center gap-2 | pos-absolute top-0 right-0 | h-100 mr-5">
+                                    <button type="button" class="pos-relative | p-4 pr-5 | fs-3 | brad- bc-neutral-100 c-neutral-900 b-0 cur-pointer | search_form__clear_btn" title="Effacer la saisie" hidden="">
+                                        <span class="icon-x | pos-absolute top-50 left-50 t-tY-50 t-tX-50"></span>
+                                    </button>
+                                    <button type="submit" class="pos-relative | h-100 p-0 ar-square | fs-5 | brad-4 bc-primary-500 c-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-100 cur-pointer" title="Lancer la recherche">
+                                        <span class="icon-magnifying-glass | pos-absolute top-50 left-50 t-tY-50 t-tX-50"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </li>
+                    
+                    
+                        <li class="d-flex ai-center fw-wrap gap-7 rgap-1 | pb-3 pl-4">
+                            
+                                <a href="https://github.com/ita-design-system/c-toggle.js" class="
+                                    d-flex ai-center gap-1
+                                    pt-2 pb-2
+                                    fvs-wght-600 fs-2 lsp-3 lh-1 tt-uppercase td-none
+                                    c-primary-600" target="_blank">
+                                    GitHub
+                                    <span class=""><span class="icon-arrow-square-out | pos-absolute t-tY-50 | c-primary-300"></span></span>
+                                </a>
+                            
+                                <a href="https://github.com/ita-design-system" class="
+                                    d-flex ai-center gap-1
+                                    pt-2 pb-2
+                                    fvs-wght-600 fs-2 lsp-3 lh-1 tt-uppercase td-none
+                                    c-primary-600" target="_blank">
+                                    ITADS
+                                    <span class=""><span class="icon-arrow-square-out | pos-absolute t-tY-50 | c-primary-300"></span></span>
+                                </a>
+                            
+                        </li>
+                    
+                </menu>
+                
+                
+
+                
+
+                
+
+
+
+
+
+
+<div id="nav_primary" class="pos-relative | fg-1 o-auto">
+    
+    <ol class="d-flex fd-column | m-0 pl-0 pt-3 pb-11 | ls-none"><li class="d-flex fw-wrap ai-center"><a href="/c-toggle.js/exemple-simple/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Exemple simple</a></li>
+<li class="d-flex fw-wrap ai-center"><a href="/c-toggle.js/multiples-declencheurs-1-cible/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Multiples déclencheurs 1 cible</a></li>
+<li class="d-flex fw-wrap ai-center"><a href="/c-toggle.js/1-declencheur-multiples-cibles/" aria-current="page" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">1 déclencheur multiples cibles</a></li>
+<li class="d-flex fw-wrap ai-center"><a href="/c-toggle.js/multiples-declencheur-multiples-cibles/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Multiples déclencheur multiples cibles</a></li>
+<li class="d-flex fw-wrap ai-center"><a href="/c-toggle.js/clic-externe/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Clic externe</a></li>
+<li class="d-flex fw-wrap ai-center"><a href="/c-toggle.js/mouseenter/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Mouseenter</a></li>
+<li class="d-flex fw-wrap ai-center"><a href="/c-toggle.js/mouseover/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Mouseover</a></li>
+<li class="d-flex fw-wrap ai-center"><a href="/c-toggle.js/evenements/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Événements</a></li></ol>
+    
+</div>
+            </nav>
+        </div>
+        <main class="pos-relative" w-100-minus-sidebar="md" w-100="xs,sm">
+            <header class="d-flex fd-column | pt-5 pb-7">
+                <ul class="d-flex ai-center gap-2 | p-0 m-0 o-auto | fs-2 lh-3 | ls-none">
+    <li class="d-flex ai-center gap-2">
+        <a href="/c-toggle.js/" class="pos-relative | p-5 | fs-4 td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1" title="Page d’accueil">
+            <span class="icon-house | pos-absolute top-50 left-50 t-tY-50 t-tX-50"></span>
+        </a> /
+    </li>
+    
+    
+    
+    <li class="c-neutral-800 ws-nowrap">1 déclencheur multiples cibles</li>
+</ul>
+                <h1 class="mt-3 mb-0 | lsp-5 fvs-wght-700 tws-balance " fs-10="md" fs-9="xs,sm">
+                    1 déclencheur multiples cibles
+                </h1>
+                
+                    <p class="d-flex ai-center fw-wrap gap-2 | pt-5 pl-5 pb-5 m-0 | fvs-wght-400 tws-balance fs-7 lsp-3 lh-5 | blwidth-1 blstyle-dashed bcolor-neutral-500" pt-3="xs" pb-3="xs" fs-6="sm" fs-5="xs">
+                        Un seul déclencheur câblé sur plusieurs cibles
+                    </p>
+                
+                
+                    
+                    <div class="d-flex ai-center | m-0 | blwidth-1 blstyle-dashed bcolor-neutral-500">
+                        <div class="pl-5 | bbwidth-1 bbstyle-dashed bcolor-neutral-500"></div>
+                        
+                            <p class="d-flex ai-center gap-2 | m-0 pr-2 | fvs-wght-400 fs-3 lsp-3 lh-3 | c-neutral-700 bc-primary-100" fs-2="xs">
+                                <span class="icon-calendar-dots fs-6"></span>
+                                <span ws-nowrap="sm,md">
+                                    <span class="ws-nowrap">Dernière modification</span>
+                                    2025-04-08
+                                </span>
+                            </p>
+                        
+                        <div class="pl-5 w-100 | bbwidth-1 bbstyle-dashed bcolor-neutral-500"></div>
+                        
+                            <div class="d-flex ai-center gap-3">
+                                <div class="pos-relative | p-5 | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500">
+                                    <div class="icon-user | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-6"></div>
+                                </div>
+                                <p class="d-flex fd-column | m-0 | fvs-wght-400 fs-3 lsp-3 lh-3 | c-neutral-700 bc-primary-100" fs-2="xs" ws-nowrap="sm,md" style="min-width: 10ch">
+                                    Olivier 3lanc
+                                </p>
+                            </div>
+                        
+                    </div>
+                
+                
+            </header>
+            <aside class="d-flex | sandbox" fd-column="xs,sm" gap-2="xs,sm" ai-start="xs,sm" o-hidden="md" pl-9="md" pr-9="md" pl-5="xs,sm" pr-5="xs,sm">
+<div class="d-flex | p-1 | bc-primary-200 brad-2" d-none="md">
+<button type="button" class="d-flex | pt-2 pb-2 pl-5 pr-5 | fvs-wght-400 fs-2 tt-uppercase | c-primary-900 bc-0 b-0 cur-pointer | sandbox__tab" data-name="code">
+Code
+</button>
+<button type="button" class="d-flex | pt-2 pb-2 pl-5 pr-5 | fvs-wght-400 fs-2 tt-uppercase | c-primary-900 bc-neutral-100 b-0 brad-1 cur-pointer | sandbox__tab" data-name="iframe">
+Résultat
+</button>
+</div>
+<div class="d-flex fd-column d-none--xs d-none--sm | o-hidden | bc-neutral-900 c-neutral-200 brad-3 bwidth-1 bstyle-solid bcolor-neutral-900 | sandbox__code_wrapper" w-50="md" w-100="xs,sm" bradtr-0="md" bradbr-0="md">
+<header class="d-flex jc-space-between | pl-5" style="height: 58px">
+<p class="d-flex ai-center | m-0 | fvs-wght-400 fs-3 lh-1 | c-neutral-600" fs-2="xs">
+Bac à sable
+</p>
+<button type="button" class="d-flex ai-center | pl-5 pr-5 | fvs-wght-400 fs-2 tt-uppercase | bc-0 c-neutral-300 b-0 cur-pointer | sandbox__copy_code" title="Copier le HTML">
+<span class="o-hidden | to-ellipsis ws-nowrap">Copier</span>
+</button>
+</header>
+<div class="pos-relative" pl-5="md">
+<pre class="m-0 h-500px o-auto" bradtl-3="md" bradbl-3="md">
+<code class="language-html fvs-mono-on fvs-wght-300 fs-3 lh-6 | sandbox__code" fs-2="xs">&lt;button c-toggle=&quot;ex3&quot;&gt;déclencheur&lt;/button&gt; 
+&lt;p c-toggle-name=&quot;ex3&quot;
+    class=&quot;orange-mode&quot;
+    data-opened-state-class=&quot;green-mode fw-bold&quot;&gt;
+    Je suis la cible 1 du canal &quot;ex3&quot;.
+&lt;/p&gt;
+&lt;div c-toggle-name=&quot;ex3&quot;
+    class=&quot;d-none&quot;
+    data-opened-state-class=&quot;pos-fixed bottom-0 left-0 green-mode&quot;&gt;
+    Je suis la cible 2 du canal &quot;ex3&quot;.
+&lt;/div&gt;
+&lt;p c-toggle-name=&quot;ex3&quot;
+    class=&quot;orange-mode&quot;
+    data-opened-state-class=&quot;green-mode fw-bold fs-large&quot;&gt;
+    Je suis la cible 3 du canal &quot;ex3&quot;.
+&lt;/p&gt;
+&lt;script src=&quot;/assets/c-toggle.js&quot;&gt;&lt;/script&gt;
+&lt;!-- DEMO UNIQUEMENT --&gt;
+&lt;style&gt;
+    .d-none {
+        display: none
+    }
+    .orange-mode {
+        background-color: orange;
+        color: black;
+    }
+    .green-mode {
+        background-color: yellowgreen;
+        color: darkgreen;
+    }
+    .pos-fixed {
+        position: fixed
+    }
+    .bottom-0 {
+        bottom: 0;
+    }
+    .left-0 {
+        left: 0;
+    }
+    .fs-large {
+        font-size: xx-large;
+    }
+    .fw-bold {
+        font-weight: 700;
+    }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif; 
+    }
+&lt;/style&gt;
+</code>
+</pre>
+<div class="d-flex jc-center ai-center | pos-absolute top-0 left-0 | w-100 h-100 | sandbox__enable_wrapper" style="background-color: rgba(0,0,0,0.5)">
+<input type="checkbox" id="EUSgNlhe_code" value="" class="pos-absolute | opa-0 | sandbox__enable_switch" checked="">
+<label for="EUSgNlhe_code" class="d-flex ai-center gap-1 | p-5 | fvs-wght-500 tt-uppercase | bc-neutral-900 brad-2 cur-pointer">
+<span class="icon-play"></span>
+Activer
+</label>
+</div>
+</div>
+<div class="d-flex gap-2 | m-0 pt-1 pb-1 pl-0 | fvs-wght-400 fs-2 lh-1 | c-neutral-500 ls-none" pl-2="xs,sm">
+ 
+</div>
+</div>
+<button class="pos-relative | p-0 | bc-neutral-800 c-neutral-500 b-0 | sandbox__resizer" title="Cliquer déplacer pour redimensionner code et résultat" d-none="xs,sm">
+<span class="icon-dots-six-vertical fs-5"></span>
+</button>
+<div class="d-flex fd-column | pos-relative | o-hidden | bc-neutral-900 c-neutral-200 brad-3 bwidth-1 bstyle-solid bcolor-neutral-900 | sandbox__iframe_wrapper" w-50="md" w-100="xs,sm" bradtl-0="md" bradbl-0="md" style="box-sizing: content-box"><header class="d-flex jc-space-between | pl-5" style="height: 58px">
+<div class="d-flex ai-center | fvs-wght-400 fs-3 | c-neutral-500">
+srcdoc
+</div>
+</header>
+<div class="d-flex | pos-relative">
+<iframe srcdoc="&#60;button&#32;c&#45;toggle&#61;&#34;ex&#51;&#34;&#62;d&#233;clencheur&#60;&#47;button&#62;&#32;&#10;&#60;p&#32;c&#45;toggle&#45;name&#61;&#34;ex&#51;&#34;&#10;&#32;&#32;&#32;&#32;class&#61;&#34;orange&#45;mode&#34;&#10;&#32;&#32;&#32;&#32;data&#45;opened&#45;state&#45;class&#61;&#34;green&#45;mode&#32;fw&#45;bold&#34;&#62;&#10;&#32;&#32;&#32;&#32;Je&#32;suis&#32;la&#32;cible&#32;&#49;&#32;du&#32;canal&#32;&#34;ex&#51;&#34;&#46;&#10;&#60;&#47;p&#62;&#10;&#60;div&#32;c&#45;toggle&#45;name&#61;&#34;ex&#51;&#34;&#10;&#32;&#32;&#32;&#32;class&#61;&#34;d&#45;none&#34;&#10;&#32;&#32;&#32;&#32;data&#45;opened&#45;state&#45;class&#61;&#34;pos&#45;fixed&#32;bottom&#45;&#48;&#32;left&#45;&#48;&#32;green&#45;mode&#34;&#62;&#10;&#32;&#32;&#32;&#32;Je&#32;suis&#32;la&#32;cible&#32;&#50;&#32;du&#32;canal&#32;&#34;ex&#51;&#34;&#46;&#10;&#60;&#47;div&#62;&#10;&#60;p&#32;c&#45;toggle&#45;name&#61;&#34;ex&#51;&#34;&#10;&#32;&#32;&#32;&#32;class&#61;&#34;orange&#45;mode&#34;&#10;&#32;&#32;&#32;&#32;data&#45;opened&#45;state&#45;class&#61;&#34;green&#45;mode&#32;fw&#45;bold&#32;fs&#45;large&#34;&#62;&#10;&#32;&#32;&#32;&#32;Je&#32;suis&#32;la&#32;cible&#32;&#51;&#32;du&#32;canal&#32;&#34;ex&#51;&#34;&#46;&#10;&#60;&#47;p&#62;&#10;&#60;script&#32;src&#61;&#34;&#47;assets&#47;c&#45;toggle&#46;js&#34;&#62;&#60;&#47;script&#62;&#10;&#60;&#33;&#45;&#45;&#32;DEMO&#32;UNIQUEMENT&#32;&#45;&#45;&#62;&#10;&#60;style&#62;&#10;&#32;&#32;&#32;&#32;&#46;d&#45;none&#32;{&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;display&#58;&#32;none&#10;&#32;&#32;&#32;&#32;}&#10;&#32;&#32;&#32;&#32;&#46;orange&#45;mode&#32;{&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;background&#45;color&#58;&#32;orange&#59;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;color&#58;&#32;black&#59;&#10;&#32;&#32;&#32;&#32;}&#10;&#32;&#32;&#32;&#32;&#46;green&#45;mode&#32;{&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;background&#45;color&#58;&#32;yellowgreen&#59;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;color&#58;&#32;darkgreen&#59;&#10;&#32;&#32;&#32;&#32;}&#10;&#32;&#32;&#32;&#32;&#46;pos&#45;fixed&#32;{&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;position&#58;&#32;fixed&#10;&#32;&#32;&#32;&#32;}&#10;&#32;&#32;&#32;&#32;&#46;bottom&#45;&#48;&#32;{&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bottom&#58;&#32;&#48;&#59;&#10;&#32;&#32;&#32;&#32;}&#10;&#32;&#32;&#32;&#32;&#46;left&#45;&#48;&#32;{&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;left&#58;&#32;&#48;&#59;&#10;&#32;&#32;&#32;&#32;}&#10;&#32;&#32;&#32;&#32;&#46;fs&#45;large&#32;{&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;font&#45;size&#58;&#32;xx&#45;large&#59;&#10;&#32;&#32;&#32;&#32;}&#10;&#32;&#32;&#32;&#32;&#46;fw&#45;bold&#32;{&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;font&#45;weight&#58;&#32;&#55;&#48;&#48;&#59;&#10;&#32;&#32;&#32;&#32;}&#10;&#32;&#32;&#32;&#32;body&#32;{&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;font&#45;family&#58;&#32;&#45;apple&#45;system&#44;&#32;BlinkMacSystemFont&#44;&#32;avenir&#32;next&#44;&#32;avenir&#44;&#32;segoe&#32;ui&#44;&#32;helvetica&#32;neue&#44;&#32;Cantarell&#44;&#32;Ubuntu&#44;&#32;roboto&#44;&#32;noto&#44;&#32;helvetica&#44;&#32;arial&#44;&#32;sans&#45;serif&#59;&#32;&#10;&#32;&#32;&#32;&#32;}&#10;&#60;&#47;style&#62;&#10;" loading="lazy" class="w-100 h-500px | b-0 bc-neutral-100 | sandbox__iframe"></iframe>
+<div class="d-flex jc-center ai-center | pos-absolute top-0 left-0 | w-100 h-100 | sandbox__enable_wrapper" style="background-color: rgba(0,0,0,0.5)">
+<input type="checkbox" id="EUSgNlhe_iframe" value="" class="pos-absolute | opa-0 | sandbox__enable_switch" checked="">
+<label for="EUSgNlhe_iframe" class="d-flex ai-center gap-1 | p-5 | fvs-wght-500 tt-uppercase | bc-neutral-900 brad-2 cur-pointer">
+<span class="icon-play"></span> Activer
+</label>
+</div>
+</div>
+<ul class="d-flex gap-2 | m-0 pt-1 pb-1 pl-2 | fvs-wght-400 fs-2 lh-1 | c-neutral-500 ls-none">
+<li>Largeur: <span class="sandbox__monitor__iframe_width">-</span>px</li>
+<li>Hauteur: <span class="sandbox__monitor__iframe_height">-</span>px</li>
+</ul>
+</div>
+</aside>
+
+            <footer class="minh-100vh">
+                <div class="pt-11 | bwidth-1 bstyle-dashed bcolor-neutral-500 btwidth-0 brwidth-0"></div>
+                <p class="mt-5 mb-0 | fs-2">
+                    <a href="https://github.com/ita-design-system/eleventy-libdoc" target="_blank" class="td-none">
+                        11ty LibDoc 0.1.0
+                    </a>
+                </p>
+            </footer>
+        </main>
+    </div>
+    
+    
+    <script src="/c-toggle.js/core/assets/js/c-toggle.js"></script>
+    <script src="/c-toggle.js/core/assets/js/sandbox.js"></script>
+    <script src="/c-toggle.js/core/assets/js/hljs/highlight.min.js"></script>
+    
+        <script src="/c-toggle.js/core/assets/js/hljs/languages/xml.min.js"></script>
+    
+        <script src="/c-toggle.js/core/assets/js/hljs/languages/javascript.min.js"></script>
+    
+        <script src="/c-toggle.js/core/assets/js/hljs/languages/yaml.min.js"></script>
+    
+        <script src="/c-toggle.js/core/assets/js/hljs/languages/css.min.js"></script>
+    
+    <script src="/c-toggle.js/core/assets/js/ui.js"></script>
+</body>
+</html>
