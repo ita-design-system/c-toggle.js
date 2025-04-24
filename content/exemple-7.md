@@ -5,13 +5,18 @@ eleventyNavigation:
 description: Bascule le canal spécifié vers l’état ouvert lorsque le pointeur entre dans la zone d’un déclencheur et vers l’état fermé quand il en sort
 layout: libdoc_page.liquid
 permalink: "{{ eleventyNavigation.key | slugify }}/index.html"
+date: git Last Modified
 ---
 {% sandbox %}
 <button c-toggle="ex1" data-event="mouseover">déclencheur</button>
 <p c-toggle-name="ex1"
     class="d-none"
     data-opened-state-class="p-6 bc-support-success c-support-success">
-    Je suis la cible cToggle câblée sur le canal "ex1". Avec <br><code>data-event="mouseover"</code> <br>Je bascule vers l'état ouvert lorsque le pointeur entre dans la zone d'un déclencheur et vers l'état fermé quand il en sort.
+    Je suis la cible cToggle câblée sur le canal "ex1".<br>
+    Avec <code>data-event="mouseover"</code>
+    Je bascule vers l'état ouvert lorsque 
+    le pointeur entre dans la zone 
+    d'un déclencheur et vers l'état fermé quand il en sort.
 </p>
 <script src="{{ libdocConfig.htmlBasePathPrefix }}assets/c-toggle.js"></script>
 <!-- DEMO UNIQUEMENT -->

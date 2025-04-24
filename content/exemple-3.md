@@ -5,6 +5,7 @@ eleventyNavigation:
 description: Un seul déclencheur câblé sur plusieurs cibles
 layout: libdoc_page.liquid
 permalink: "{{ eleventyNavigation.key | slugify }}/index.html"
+date: git Last Modified
 ---
 {% sandbox %}
 <button c-toggle="ex3">déclencheur</button> 

@@ -5,6 +5,7 @@ eleventyNavigation:
 description: Retour à l’état fermé lorsque un clic est effectué en dehors du déclencheur ou de sa cible
 layout: libdoc_page.liquid
 permalink: "{{ eleventyNavigation.key | slugify }}/index.html"
+date: git Last Modified
 ---
 {% sandbox %}
 <button c-toggle="ex1" data-dismiss="true">déclencheur</button>
@@ -12,41 +13,61 @@ permalink: "{{ eleventyNavigation.key | slugify }}/index.html"
     class="d-none"
     data-onclick-force-dismiss-children-ids="ex3"
     data-opened-state-class="bc-support-success">
-    Cible ex2. Je suis la cible cToggle câblée sur le canal "ex1".
-    Avec <br><code>data-dismiss="true"</code> <br>Je me ferme si un clic est effectué en dehors de cette cible.
-    Au clic sur ce paragraphe <code>data-onclick-force-dismiss-children-ids="ex3"</code> force la fermeture de la cible <code>ex3</code>
-    <button c-toggle="ex3" data-dismiss="true">déclencheur 3</button>
+    Cible ex2. Je suis la cible cToggle câblée sur le canal "ex1".<br>
+    Avec <code>data-dismiss="true"</code><br>
+    Je me ferme si un clic est effectué en dehors de cette cible.
+    Au clic sur ce paragraphe 
+    <code>data-onclick-force-dismiss-children-ids="ex3"</code> 
+    force la fermeture de la cible 
+    <code>ex3</code>
+    <button c-toggle="ex3"
+        data-dismiss="true">
+        Déclencheur 3
+    </button>
     <span c-toggle-name="ex3"
         class="d-none"
         data-opened-state-class="bc-support-warning c-support-warning">
-        Cible ex3. Je me ferme lorsque le contenu de <code>ex1</code> est cliqué.
+        Cible ex3. Je me ferme lorsque le contenu de 
+        <code>ex1</code> est cliqué.
     </span>
-    <button c-toggle="ex4" data-dismiss="true">déclencheur 4</button>
+    <button c-toggle="ex4"
+        data-dismiss="true">
+        Déclencheur 4
+    </button>
     <span c-toggle-name="ex4"
         class="d-none"
         data-opened-state-class="bc-support-success c-support-success">
-        Cible ex4. Je reste ouvert même si le contenu de <code>ex1</code> est cliqué.
+        Cible ex4. Je reste ouvert même si 
+        le contenu de <code>ex1</code> est cliqué.
     </span>
 </p>
 <br><br>
-<button c-toggle="ex2">déclencheur par défaut</button>
+<button c-toggle="ex2">Déclencheur par défaut</button>
 <p c-toggle-name="ex2"
     class="d-none"
     data-onclick-force-dismiss-children-ids="ex5,ex6"
     data-opened-state-class="bc-primary-300">
     Cible ex2. Je suis la cible cToggle câblée sur le canal "ex2".
     Je me ferme que si un déclencheur ou une méthode sont invoqués.
-    <button c-toggle="ex5" data-dismiss="true">déclencheur 5</button>
+    <button c-toggle="ex5"
+        data-dismiss="true">
+        Déclencheur 5
+    </button>
     <span c-toggle-name="ex5"
         class="d-none"
         data-opened-state-class="bc-support-warning c-support-warning">
-        Cible ex5. Je me ferme lorsque le contenu de <code>ex2</code> est cliqué.
+        Cible ex5. Je me ferme lorsque 
+        le contenu de <code>ex2</code> est cliqué.
     </span>
-    <button c-toggle="ex6" data-dismiss="true">déclencheur 6</button>
+    <button c-toggle="ex6"
+        data-dismiss="true">
+        Déclencheur 6
+    </button>
     <span c-toggle-name="ex6"
         class="d-none"
         data-opened-state-class="bc-support-success c-support-success">
-        Cible ex6. Je me ferme lorsque le contenu de <code>ex2</code> est cliqué.
+        Cible ex6. Je me ferme lorsque 
+        le contenu de <code>ex2</code> est cliqué.
     </span>
 </p>
 <script src="{{ libdocConfig.htmlBasePathPrefix }}assets/c-toggle.js"></script>

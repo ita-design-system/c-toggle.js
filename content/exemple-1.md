@@ -5,6 +5,7 @@ eleventyNavigation:
 description: Configuration minimale pour usage de c-toggle.js
 layout: libdoc_page.liquid
 permalink: "{{ eleventyNavigation.key | slugify }}/index.html"
+date: git Last Modified
 ---
 {% sandbox %}
 <button c-toggle="ex1">déclencheur</button>
@@ -14,7 +15,10 @@ permalink: "{{ eleventyNavigation.key | slugify }}/index.html"
     Je suis la cible cToggle câblée sur le canal "ex1"
 </p>
 <hr>
-<button c-toggle="ex2" data-opened-state-class="bg-green">déclencheur</button>
+<button c-toggle="ex2"
+    data-opened-state-class="bg-green">
+    Déclencheur
+</button>
 <p c-toggle-name="ex2"
     class="d-none"
     data-opened-state-class=" ">

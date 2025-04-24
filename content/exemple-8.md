@@ -5,6 +5,7 @@ eleventyNavigation:
 description: Exemple d’utilisation de l’événement cToggle_event propagé sur le document
 layout: libdoc_page.liquid
 permalink: "{{ eleventyNavigation.key | slugify }}/index.html"
+date: git Last Modified
 ---
 {% sandbox %}
 <div id="notif"></div>

@@ -5,6 +5,7 @@ eleventyNavigation:
 description: Plusieurs déclencheurs câblés sur plusieurs cibles
 layout: libdoc_page.liquid
 permalink: "{{ eleventyNavigation.key | slugify }}/index.html"
+date: git Last Modified
 ---
 {% sandbox %}
 <button c-toggle="canal_1"
