@@ -9,7 +9,7 @@
     <meta itemprop="name" content="Clic externe">
     <meta name="description" itemprop="description" content="Retour à l’état fermé lorsque un clic est effectué en dehors du déclencheur ou de sa cible">
     <meta name="application-name" content="Clic externe">
-    <meta name="author" content="Olivier 3lanc">
+    <meta name="author" content="ITADS">
     <link rel="icon" type="image/png" href="/c-toggle.js/favicon.png">
     
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -26,14 +26,14 @@
     <meta property="og:url" content="/clic-externe/">
     <meta property="og:title" content="Clic externe">
     <meta property="og:description" content="Retour à l’état fermé lorsque un clic est effectué en dehors du déclencheur ou de sa cible">
-    <meta property="og:image" content="">
+    <meta property="og:image" content="https://og-image.vercel.app/c-toggle.js.png?theme=light&md=1&fontSize=140px&fontWeight=700&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fhyper-color-logo.svg">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Clic externe">
     <meta name="twitter:description" content="Retour à l’état fermé lorsque un clic est effectué en dehors du déclencheur ou de sa cible">
     <meta name="twitter:url" content="/clic-externe/">
-    <meta name="twitter:image" content="">
+    <meta name="twitter:image" content="https://og-image.vercel.app/c-toggle.js.png?theme=light&md=1&fontSize=140px&fontWeight=700&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fhyper-color-logo.svg">
     
     <!-- iOS -->
     <meta name="apple-mobile-web-app-title" content="Clic externe">
@@ -55,7 +55,13 @@
         :root {
             --ita-widths-sidebar: 300px;
             --ita-widths-content: 700px;
+            --ita-widths-main-container-max: calc(2 * var(--ita-widths-content) + var(--ita-widths-sidebar));
         }
+        
+            main img {
+                border-radius: 9px;
+            }
+        
     </style>
     <noscript>
         <link rel="stylesheet" href="/c-toggle.js/core/assets/css/noscript.css">
@@ -115,8 +121,8 @@
         }
     </script>
 </head>
-<body class="d-flex fd-column | m-0">
-    <div class="d-flex" fd-column="xs,sm" ai-start="md" ai-center="xs,sm" pl-5="md">
+<body class="d-flex fd-column ai-center | m-0">
+    <div class="d-flex | w-100" fd-column="xs,sm" ai-start="md" ai-center="xs,sm" pl-5="md" style="max-width: var(--ita-widths-main-container-max)">
         <div class="d-flex fd-column | pos-sticky top-0 z-2" ai-center="xs,sm" w-100="xs,sm" w-sidebar="md">
             <nav id="nav_small_devices" class="d-flex | pos-fixed bottom-0 left-0 z-1 | w-100 h-60px" d-none="md">
                 <div class="d-flex jc-space-between | w-100 | bc-neutral-100 btwidth-1 btstyle-dashed bcolor-neutral-500">
@@ -144,7 +150,7 @@
                     </button>
                 </div>
             </nav>
-            <nav id="nav_primary_container" class="d-flex d-none--xs d-none--sm fd-column | w-100 o-hidden | bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500" mt-5="md" maxw-sidebar="md" maxh-sidebar="md" h-sidebar="xs,sm" brad-3="md" c-toggle-name="nav_primary" data-opened-state-class="d-flex fd-column | w-100 o-hidden | bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500">
+            <nav id="nav_primary_container" class="d-flex d-none--xs d-none--sm fd-column | w-100 o-hidden | bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 |  __soft-shadow" mt-5="md" maxw-sidebar="md" maxh-sidebar="md" h-sidebar="xs,sm" brad-3="md" c-toggle-name="nav_primary" data-opened-state-class="d-flex fd-column | w-100 o-hidden | bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500">
                 <menu id="nav_primary_header" class="
                     d-flex fd-column
                     pos-sticky top-0 z-1
@@ -219,16 +225,20 @@
         </div>
         <main class="pos-relative" w-100-minus-sidebar="md" w-100="xs,sm">
             <header class="d-flex fd-column | pt-5 pb-7">
-                <ul class="d-flex ai-center gap-2 | p-0 m-0 o-auto | fs-2 lh-3 | ls-none">
+                <ul class="d-flex ai-center gap-2 | p-0 m-0 | fs-2 lh-3 | ls-none">
     <li class="d-flex ai-center gap-2">
-        <a href="/c-toggle.js/" class="pos-relative | p-5 | fs-4 td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1" title="Page d’accueil">
+        <a href="/c-toggle.js/" class="pos-relative | p-5 | fs-4 td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" title="Page d’accueil">
             <span class="icon-house | pos-absolute top-50 left-50 t-tY-50 t-tX-50"></span>
         </a> /
     </li>
-    
-    
-    
-    <li class="c-neutral-800 ws-nowrap">Clic externe</li>
+    <li class="o-auto">
+        <ul class="d-flex ai-center gap-2 | p-0 m-0 | fs-2 lh-3 | ls-none">
+            
+            
+            
+            <li class="c-neutral-800 ws-nowrap">Clic externe</li>
+        </ul>
+    </li>
 </ul>
                 <h1 class="mt-3 mb-0 | lsp-5 fvs-wght-700 tws-balance " fs-10="md" fs-9="xs,sm">
                     Clic externe
@@ -258,7 +268,7 @@
                                     <div class="icon-user | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-6"></div>
                                 </div>
                                 <p class="d-flex fd-column | m-0 | fvs-wght-400 fs-3 lsp-3 lh-3 | c-neutral-700 bc-primary-100" fs-2="xs" ws-nowrap="sm,md" style="min-width: 10ch">
-                                    Olivier 3lanc
+                                    ITADS
                                 </p>
                             </div>
                         
@@ -383,8 +393,8 @@ Bac à sable
 </code>
 </pre>
 <div class="d-flex jc-center ai-center | pos-absolute top-0 left-0 | w-100 h-100 | sandbox__enable_wrapper" style="background-color: rgba(0,0,0,0.5)">
-<input type="checkbox" id="UH1QC5Jg_code" value="" class="pos-absolute | opa-0 | sandbox__enable_switch" checked="">
-<label for="UH1QC5Jg_code" class="d-flex ai-center gap-1 | p-5 | fvs-wght-500 tt-uppercase | bc-neutral-900 brad-2 cur-pointer">
+<input type="checkbox" id="q5tcltgM_code" value="" class="pos-absolute | opa-0 | sandbox__enable_switch" checked="">
+<label for="q5tcltgM_code" class="d-flex ai-center gap-1 | p-5 | fvs-wght-500 tt-uppercase | bc-neutral-900 brad-2 cur-pointer">
 <span class="icon-play"></span>
 Activer
 </label>
@@ -405,8 +415,8 @@ srcdoc
 <div class="d-flex | pos-relative">
 <iframe srcdoc="&#60;button&#32;c&#45;toggle&#61;&#34;ex&#49;&#34;&#32;data&#45;dismiss&#61;&#34;true&#34;&#62;d&#233;clencheur&#60;&#47;button&#62;&#10;&#60;p&#32;c&#45;toggle&#45;name&#61;&#34;ex&#49;&#34;&#10;&#32;&#32;&#32;&#32;class&#61;&#34;d&#45;none&#34;&#10;&#32;&#32;&#32;&#32;data&#45;onclick&#45;force&#45;dismiss&#45;children&#45;ids&#61;&#34;ex&#51;&#34;&#10;&#32;&#32;&#32;&#32;data&#45;opened&#45;state&#45;class&#61;&#34;bc&#45;support&#45;success&#34;&#62;&#10;&#32;&#32;&#32;&#32;Cible&#32;ex&#50;&#46;&#32;Je&#32;suis&#32;la&#32;cible&#32;cToggle&#32;c&#226;bl&#233;e&#32;sur&#32;le&#32;canal&#32;&#34;ex&#49;&#34;&#46;&#60;br&#62;&#10;&#32;&#32;&#32;&#32;Avec&#32;&#60;code&#62;data&#45;dismiss&#61;&#34;true&#34;&#60;&#47;code&#62;&#60;br&#62;&#10;&#32;&#32;&#32;&#32;Je&#32;me&#32;ferme&#32;si&#32;un&#32;clic&#32;est&#32;effectu&#233;&#32;en&#32;dehors&#32;de&#32;cette&#32;cible&#46;&#10;&#32;&#32;&#32;&#32;Au&#32;clic&#32;sur&#32;ce&#32;paragraphe&#32;&#10;&#32;&#32;&#32;&#32;&#60;code&#62;data&#45;onclick&#45;force&#45;dismiss&#45;children&#45;ids&#61;&#34;ex&#51;&#34;&#60;&#47;code&#62;&#32;&#10;&#32;&#32;&#32;&#32;force&#32;la&#32;fermeture&#32;de&#32;la&#32;cible&#32;&#10;&#32;&#32;&#32;&#32;&#60;code&#62;ex&#51;&#60;&#47;code&#62;&#10;&#32;&#32;&#32;&#32;&#60;button&#32;c&#45;toggle&#61;&#34;ex&#51;&#34;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#45;dismiss&#61;&#34;true&#34;&#62;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;D&#233;clencheur&#32;&#51;&#10;&#32;&#32;&#32;&#32;&#60;&#47;button&#62;&#10;&#32;&#32;&#32;&#32;&#60;span&#32;c&#45;toggle&#45;name&#61;&#34;ex&#51;&#34;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;class&#61;&#34;d&#45;none&#34;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#45;opened&#45;state&#45;class&#61;&#34;bc&#45;support&#45;warning&#32;c&#45;support&#45;warning&#34;&#62;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Cible&#32;ex&#51;&#46;&#32;Je&#32;me&#32;ferme&#32;lorsque&#32;le&#32;contenu&#32;de&#32;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#60;code&#62;ex&#49;&#60;&#47;code&#62;&#32;est&#32;cliqu&#233;&#46;&#10;&#32;&#32;&#32;&#32;&#60;&#47;span&#62;&#10;&#32;&#32;&#32;&#32;&#60;button&#32;c&#45;toggle&#61;&#34;ex&#52;&#34;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#45;dismiss&#61;&#34;true&#34;&#62;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;D&#233;clencheur&#32;&#52;&#10;&#32;&#32;&#32;&#32;&#60;&#47;button&#62;&#10;&#32;&#32;&#32;&#32;&#60;span&#32;c&#45;toggle&#45;name&#61;&#34;ex&#52;&#34;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;class&#61;&#34;d&#45;none&#34;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#45;opened&#45;state&#45;class&#61;&#34;bc&#45;support&#45;success&#32;c&#45;support&#45;success&#34;&#62;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Cible&#32;ex&#52;&#46;&#32;Je&#32;reste&#32;ouvert&#32;m&#234;me&#32;si&#32;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;le&#32;contenu&#32;de&#32;&#60;code&#62;ex&#49;&#60;&#47;code&#62;&#32;est&#32;cliqu&#233;&#46;&#10;&#32;&#32;&#32;&#32;&#60;&#47;span&#62;&#10;&#60;&#47;p&#62;&#10;&#60;br&#62;&#60;br&#62;&#10;&#60;button&#32;c&#45;toggle&#61;&#34;ex&#50;&#34;&#62;D&#233;clencheur&#32;par&#32;d&#233;faut&#60;&#47;button&#62;&#10;&#60;p&#32;c&#45;toggle&#45;name&#61;&#34;ex&#50;&#34;&#10;&#32;&#32;&#32;&#32;class&#61;&#34;d&#45;none&#34;&#10;&#32;&#32;&#32;&#32;data&#45;onclick&#45;force&#45;dismiss&#45;children&#45;ids&#61;&#34;ex&#53;&#44;ex&#54;&#34;&#10;&#32;&#32;&#32;&#32;data&#45;opened&#45;state&#45;class&#61;&#34;bc&#45;primary&#45;&#51;&#48;&#48;&#34;&#62;&#10;&#32;&#32;&#32;&#32;Cible&#32;ex&#50;&#46;&#32;Je&#32;suis&#32;la&#32;cible&#32;cToggle&#32;c&#226;bl&#233;e&#32;sur&#32;le&#32;canal&#32;&#34;ex&#50;&#34;&#46;&#10;&#32;&#32;&#32;&#32;Je&#32;me&#32;ferme&#32;que&#32;si&#32;un&#32;d&#233;clencheur&#32;ou&#32;une&#32;m&#233;thode&#32;sont&#32;invoqu&#233;s&#46;&#10;&#32;&#32;&#32;&#32;&#60;button&#32;c&#45;toggle&#61;&#34;ex&#53;&#34;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#45;dismiss&#61;&#34;true&#34;&#62;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;D&#233;clencheur&#32;&#53;&#10;&#32;&#32;&#32;&#32;&#60;&#47;button&#62;&#10;&#32;&#32;&#32;&#32;&#60;span&#32;c&#45;toggle&#45;name&#61;&#34;ex&#53;&#34;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;class&#61;&#34;d&#45;none&#34;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#45;opened&#45;state&#45;class&#61;&#34;bc&#45;support&#45;warning&#32;c&#45;support&#45;warning&#34;&#62;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Cible&#32;ex&#53;&#46;&#32;Je&#32;me&#32;ferme&#32;lorsque&#32;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;le&#32;contenu&#32;de&#32;&#60;code&#62;ex&#50;&#60;&#47;code&#62;&#32;est&#32;cliqu&#233;&#46;&#10;&#32;&#32;&#32;&#32;&#60;&#47;span&#62;&#10;&#32;&#32;&#32;&#32;&#60;button&#32;c&#45;toggle&#61;&#34;ex&#54;&#34;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#45;dismiss&#61;&#34;true&#34;&#62;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;D&#233;clencheur&#32;&#54;&#10;&#32;&#32;&#32;&#32;&#60;&#47;button&#62;&#10;&#32;&#32;&#32;&#32;&#60;span&#32;c&#45;toggle&#45;name&#61;&#34;ex&#54;&#34;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;class&#61;&#34;d&#45;none&#34;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#45;opened&#45;state&#45;class&#61;&#34;bc&#45;support&#45;success&#32;c&#45;support&#45;success&#34;&#62;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Cible&#32;ex&#54;&#46;&#32;Je&#32;me&#32;ferme&#32;lorsque&#32;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;le&#32;contenu&#32;de&#32;&#60;code&#62;ex&#50;&#60;&#47;code&#62;&#32;est&#32;cliqu&#233;&#46;&#10;&#32;&#32;&#32;&#32;&#60;&#47;span&#62;&#10;&#60;&#47;p&#62;&#10;&#60;script&#32;src&#61;&#34;&#47;c&#45;toggle&#46;js&#47;assets&#47;c&#45;toggle&#46;js&#34;&#62;&#60;&#47;script&#62;&#10;&#60;&#33;&#45;&#45;&#32;DEMO&#32;UNIQUEMENT&#32;&#45;&#45;&#62;&#10;&#60;style&#62;&#10;&#32;&#32;&#32;&#32;&#46;d&#45;none&#32;{&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;display&#58;&#32;none&#10;&#32;&#32;&#32;&#32;}&#10;&#32;&#32;&#32;&#32;&#46;p&#45;&#54;&#32;{&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;padding&#58;&#32;&#49;em&#59;&#10;&#32;&#32;&#32;&#32;}&#10;&#32;&#32;&#32;&#32;&#46;bc&#45;support&#45;warning&#32;{&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;background&#45;color&#58;&#32;orange&#59;&#10;&#32;&#32;&#32;&#32;}&#10;&#32;&#32;&#32;&#32;&#46;c&#45;support&#45;warning&#32;{&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;color&#58;&#32;black&#59;&#10;&#32;&#32;&#32;&#32;}&#10;&#32;&#32;&#32;&#32;&#46;bc&#45;support&#45;success&#32;{&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;background&#45;color&#58;&#32;yellowgreen&#59;&#10;&#32;&#32;&#32;&#32;}&#10;&#32;&#32;&#32;&#32;&#46;c&#45;support&#45;success&#32;{&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;color&#58;&#32;darkgreen&#59;&#10;&#32;&#32;&#32;&#32;}&#10;&#32;&#32;&#32;&#32;body&#32;{&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;font&#45;family&#58;&#32;&#45;apple&#45;system&#44;&#32;BlinkMacSystemFont&#44;&#32;avenir&#32;next&#44;&#32;avenir&#44;&#32;segoe&#32;ui&#44;&#32;helvetica&#32;neue&#44;&#32;Cantarell&#44;&#32;Ubuntu&#44;&#32;roboto&#44;&#32;noto&#44;&#32;helvetica&#44;&#32;arial&#44;&#32;sans&#45;serif&#59;&#32;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;line&#45;height&#58;&#32;&#49;&#46;&#53;em&#59;&#10;&#32;&#32;&#32;&#32;}&#10;&#32;&#32;&#32;&#32;code&#32;{&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;font&#45;family&#58;&#32;Menlo&#44;&#32;Consolas&#44;&#32;Monaco&#44;&#32;Liberation&#32;Mono&#44;&#32;Lucida&#32;Console&#44;&#32;monospace&#59;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;color&#58;&#32;&#35;&#52;&#52;&#52;&#59;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;padding&#58;&#32;&#48;em&#32;&#48;&#46;&#51;em&#59;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;background&#45;color&#58;&#32;rgba&#40;&#50;&#53;&#53;&#44;&#50;&#53;&#53;&#44;&#50;&#53;&#53;&#44;&#48;&#46;&#51;&#41;&#59;&#10;&#32;&#32;&#32;&#32;}&#10;&#60;&#47;style&#62;&#10;" loading="lazy" class="w-100 h-500px | b-0 bc-neutral-100 | sandbox__iframe"></iframe>
 <div class="d-flex jc-center ai-center | pos-absolute top-0 left-0 | w-100 h-100 | sandbox__enable_wrapper" style="background-color: rgba(0,0,0,0.5)">
-<input type="checkbox" id="UH1QC5Jg_iframe" value="" class="pos-absolute | opa-0 | sandbox__enable_switch" checked="">
-<label for="UH1QC5Jg_iframe" class="d-flex ai-center gap-1 | p-5 | fvs-wght-500 tt-uppercase | bc-neutral-900 brad-2 cur-pointer">
+<input type="checkbox" id="q5tcltgM_iframe" value="" class="pos-absolute | opa-0 | sandbox__enable_switch" checked="">
+<label for="q5tcltgM_iframe" class="d-flex ai-center gap-1 | p-5 | fvs-wght-500 tt-uppercase | bc-neutral-900 brad-2 cur-pointer">
 <span class="icon-play"></span> Activer
 </label>
 </div>
@@ -418,11 +428,11 @@ srcdoc
 </div>
 </aside>
 
-            <footer class="minh-100vh">
+            <footer class="minh-100vh mt-10">
                 <div class="pt-11 | bwidth-1 bstyle-dashed bcolor-neutral-500 btwidth-0 brwidth-0"></div>
                 <p class="mt-5 mb-0 | fs-2">
                     <a href="https://github.com/ita-design-system/eleventy-libdoc" target="_blank" class="td-none">
-                        11ty LibDoc 0.1.0
+                        11ty LibDoc 0.3.0
                     </a>
                 </p>
             </footer>

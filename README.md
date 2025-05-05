@@ -5,9 +5,6 @@ layout: libdoc_page.liquid
 permalink: index.html
 date: git Last Modified
 ---
-
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/ita-design-system/c-toggle.js?style=for-the-badge)](https://github.com/ita-design-system/c-toggle.js/releases)
-
 cToggle permet de créer des modales, des listes déroulantes, etc.
 
 cToggle met en relation des éléments de DOM déclencheurs avec d'autres éléments de DOM cibles. Une instance de cToggle met en relation un ou plusieurs déclencheurs sur une ou plusieurs cibles lors d'événements utilisateur de type clic, mouseenter, mouseover, sur les déclencheurs.

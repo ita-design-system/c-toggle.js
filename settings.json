@@ -2,11 +2,8 @@
     "lang": "fr",
     "siteTitle": "c-toggle.js",
     "siteDescription": "Documentation de la librairie c-toggle.js dédiée à la bascule d’état des classes CSS d’un élément",
-    "siteLogoUrl": "",
-    "siteLogoMaxHeight": 60,
-    "author": "Olivier 3lanc",
-    "faviconUrl": "/favicon.png",
-    "ogImageUrl": "",
+    "author": "ITADS",
+    "ogImageUrl": "https://og-image.vercel.app/c-toggle.js.png?theme=light&md=1&fontSize=140px&fontWeight=700&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fhyper-color-logo.svg",
     "customLinks": [
         {
             "url": "https://github.com/ita-design-system/c-toggle.js",
@@ -21,13 +18,8 @@
     "blogDescription": "Description du blog",
     "blogAuthor": "c-toggle.js Team",
     "blogSlug": "blog",
-    "displayTagsListLink": true,
-    "tocEnabled": true,
-    "tocHtmlTags": ["h1", "h2", "h3", "h4", "h5", "h6"],
-    "tocMinTags": 1,
     "htmlBasePathPrefix": "/c-toggle.js/",
     "sandboxRunSwitch": false,
-    "searchEnabled": true,
     "hljsLanguages": [
         "xml",
         "javascript",
