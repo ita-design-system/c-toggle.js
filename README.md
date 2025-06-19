@@ -28,36 +28,36 @@ Via `https://www.jsdelivr.com` :
 Version la plus récente
 
 ```html
-https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js/ui/js/c-toggle.js
+https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js/assets/c-toggle.js
 ```
 
 Version la plus récente minifiée :
 
 ```html
-https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js/ui/js/c-toggle.min.js
+https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js/assets/c-toggle.min.js
 ```
 
 Typologie avec numéro de version :
 
 ```html
-https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js@<TAG_VERSION>/ui/js/c-toggle.js
+https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js@<TAG_VERSION>/assets/c-toggle.js
 ```
 
 Typologie numéro de version + minification automatique :
 
 ```html
-https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js@<TAG_VERSION>/ui/js/c-toggle.min.js
+https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js@<TAG_VERSION>/assets/c-toggle.min.js
 ```
 
 Exemple avec version v0.1.2 : 
 
 ```html
-https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js@v0.1.2/ui/js/c-toggle.js
+https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js@v0.1.2/assets/c-toggle.js
 ```
 
 Exemple avec version v0.1.2 minifié :
 ```html
-https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js@v0.1.2/ui/js/c-toggle.min.js
+https://cdn.jsdelivr.net/gh/ita-design-system/c-toggle.js@v0.1.2/assets/c-toggle.min.js
 ```
 
 ## Usage
