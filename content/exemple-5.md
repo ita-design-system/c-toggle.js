@@ -70,7 +70,7 @@ date: git Last Modified
         le contenu de <code>ex2</code> est cliqué.
     </span>
 </p>
-<script src="{{ libdocConfig.htmlBasePathPrefix }}assets/c-toggle.js"></script>
+<script src="/assets/c-toggle.js"></script>
 <!-- DEMO UNIQUEMENT -->
 <style>
     .d-none {

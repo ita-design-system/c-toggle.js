@@ -25,7 +25,7 @@ date: git Last Modified
         Fermer avec un autre déclencheur
     </button>
 </p>
-<script src="{{ libdocConfig.htmlBasePathPrefix }}assets/c-toggle.js"></script>
+<script src="/assets/c-toggle.js"></script>
 <!-- DEMO UNIQUEMENT -->
 <style>
     .d-none {

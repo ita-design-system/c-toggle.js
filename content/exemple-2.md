@@ -18,7 +18,7 @@ date: git Last Modified
     Je suis la cible cToggle câblée sur le canal "ex2".<br>
     <button c-toggle="ex2">déclencheur 2</button> 
 </p>
-<script src="{{ libdocConfig.htmlBasePathPrefix }}assets/c-toggle.js"></script>
+<script src="/assets/c-toggle.js"></script>
 <!-- DEMO UNIQUEMENT -->
 <style>
     .d-none {

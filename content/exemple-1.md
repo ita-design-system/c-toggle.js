@@ -24,7 +24,7 @@ date: git Last Modified
     data-opened-state-class=" ">
     Je suis la cible cToggle câblée sur le canal "ex2"
 </p>
-<script src="{{ libdocConfig.htmlBasePathPrefix }}assets/c-toggle.js"></script>
+<script src="/assets/c-toggle.js"></script>
 <!-- DEMO UNIQUEMENT -->
 <style>
     .d-none {

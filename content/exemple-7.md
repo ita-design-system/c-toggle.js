@@ -18,7 +18,7 @@ date: git Last Modified
     le pointeur entre dans la zone 
     d'un déclencheur et vers l'état fermé quand il en sort.
 </p>
-<script src="{{ libdocConfig.htmlBasePathPrefix }}assets/c-toggle.js"></script>
+<script src="/assets/c-toggle.js"></script>
 <!-- DEMO UNIQUEMENT -->
 <style>
     .d-none {

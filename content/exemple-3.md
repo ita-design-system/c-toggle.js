@@ -24,7 +24,7 @@ date: git Last Modified
     data-opened-state-class="green-mode fw-bold fs-large">
     Je suis la cible 3 du canal "ex3".
 </p>
-<script src="{{ libdocConfig.htmlBasePathPrefix }}assets/c-toggle.js"></script>
+<script src="/assets/c-toggle.js"></script>
 <!-- DEMO UNIQUEMENT -->
 <style>
     .d-none {

@@ -53,7 +53,7 @@ date: git Last Modified
     data-opened-state-class="p-6 bc-support-warning c-support-warning">
     canal_2. Je suis la cible 2 du canal "canal_2".
 </p>
-<script src="{{ libdocConfig.htmlBasePathPrefix }}assets/c-toggle.js"></script>
+<script src="/assets/c-toggle.js"></script>
 <!-- DEMO UNIQUEMENT -->
 <style>
     .d-none {
