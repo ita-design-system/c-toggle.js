@@ -18,7 +18,6 @@
     "blogDescription": "Description du blog",
     "blogAuthor": "c-toggle.js Team",
     "blogSlug": "blog",
-    "htmlBasePathPrefix": "/c-toggle.js/",
     "sandboxRunSwitch": false,
     "hljsLanguages": [
         "xml",
